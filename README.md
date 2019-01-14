@@ -6,6 +6,8 @@
 
 ### Overview
 
+<img src="https://github.com/keisukeYamagishi/TabPageScrollViewController/blob/master/doc/tappage.gif">
+
 The tab bar at the top of the screen moves synchronously with page scrolling.
 
 When you press a tab, it will transition to the page you pressed.
