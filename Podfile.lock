@@ -1,0 +1,16 @@
+PODS:
+  - SHColor (1.0.5)
+
+DEPENDENCIES:
+  - SHColor
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SHColor
+
+SPEC CHECKSUMS:
+  SHColor: 0b4b9d02de5d188bbcdbe72bcaa3def3669d0abb
+
+PODFILE CHECKSUM: 07ea41f5a61f9d5edf22b1314ceacb2077887299
+
+COCOAPODS: 1.6.0.beta.2
