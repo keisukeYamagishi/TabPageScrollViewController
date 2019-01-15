@@ -14,7 +14,6 @@ class PageViewController:UIPageViewController {
     static let identifer = "PageViewController"
     var vcs:[UIViewController] = []
     var observer:Observer!
-    var current:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
