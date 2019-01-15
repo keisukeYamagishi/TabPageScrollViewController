@@ -39,12 +39,6 @@ class TabPageViewController: UIViewController {
         self.observer.delegate = self
         self.observer.viewControllers = filtering.viewControllers
         self.setChildViewController()
-        
-        self.navigationController?.navigationBar.tintColor = UIColor(hex: "#183972")
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.titleTextAttributes
-            = [NSAttributedString.Key.font: UIFont(name: "HiraMinProN-W3", size: 17)!]
     }
     
     private func setChildViewController () {
