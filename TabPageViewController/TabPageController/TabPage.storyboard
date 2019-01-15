@@ -10,46 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Detail View Controller-->
-        <scene sceneID="PWR-fL-CC1">
-            <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="FcC-Hx-suT" customClass="DetailViewController" customModule="FunRecipes" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mv5-Yq-azu"/>
-                        <viewControllerLayoutGuide type="bottom" id="IHs-vf-fMO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1Zg-fx-oJM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmL-cc-lpd">
-                                <rect key="frame" x="143" y="274" width="89" height="119"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="89" id="HIB-7e-cWQ"/>
-                                    <constraint firstAttribute="height" constant="119" id="gjz-xr-JNr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="qmL-cc-lpd" firstAttribute="centerX" secondItem="1Zg-fx-oJM" secondAttribute="centerX" id="ALh-hh-oAg"/>
-                            <constraint firstItem="qmL-cc-lpd" firstAttribute="centerY" secondItem="1Zg-fx-oJM" secondAttribute="centerY" id="P1Y-Vn-DIt"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="WaS-yZ-oHv"/>
-                    </view>
-                    <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="viewLabel" destination="qmL-cc-lpd" id="FNN-sq-3nk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bbb-Qh-lPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1688.8" y="-102.09895052473765"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="eu3-1T-yHu">
             <objects>
@@ -71,7 +31,7 @@
         <!--TabPageViewController-->
         <scene sceneID="mOk-iH-QaN">
             <objects>
-                <viewController storyboardIdentifier="TabPageViewController" id="I8s-1L-p6j" customClass="TabPageViewController" customModule="FunRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TabPageViewController" id="I8s-1L-p6j" customClass="TabPageViewController" customModule="TabPageViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I9A-qc-J3M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,7 +72,7 @@
         <!--Page View Controller-->
         <scene sceneID="kHP-dt-TPj">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6cY-ZP-t4g" customClass="PageViewController" customModule="FunRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6cY-ZP-t4g" customClass="PageViewController" customModule="TabPageViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="OlL-KI-1jd"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5t-e8-MXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,7 +82,7 @@
         <!--Category Collection View Controller-->
         <scene sceneID="KKw-E2-MGH">
             <objects>
-                <viewController storyboardIdentifier="CategoryCollectionViewController" id="eyw-9B-e0E" customClass="CategoryCollectionViewController" customModule="FunRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryCollectionViewController" id="eyw-9B-e0E" customClass="CategoryCollectionViewController" customModule="TabPageViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ozv-ft-UgF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,14 +90,14 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eDA-Eg-chh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="23"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gmA-32-DGl">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="gmA-32-DGl">
                                     <size key="itemSize" width="125" height="23"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="IaW-PS-Y7K" customClass="CategoryCell" customModule="FunRecipes" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="IaW-PS-Y7K" customClass="CategoryCell" customModule="TabPageViewController" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -145,11 +105,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="39H-Kx-xZz">
-                                                    <rect key="frame" x="29.5" y="0.0" width="66" height="23"/>
+                                                    <rect key="frame" x="58.5" y="0.0" width="8" height="23"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="23" id="KA2-Sc-mnQ"/>
-                                                        <constraint firstAttribute="width" constant="66" id="q52-g4-KBv"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="13"/>
                                                     <color key="textColor" red="0.27058823529999998" green="0.58823529409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
