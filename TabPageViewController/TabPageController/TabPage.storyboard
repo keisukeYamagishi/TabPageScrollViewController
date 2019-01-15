@@ -13,7 +13,7 @@
         <!--Detail View Controller-->
         <scene sceneID="PWR-fL-CC1">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="FcC-Hx-suT" customClass="DetailViewController" customModule="FunRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="FcC-Hx-suT" customClass="DetailViewController" customModule="TabPageViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mv5-Yq-azu"/>
                         <viewControllerLayoutGuide type="bottom" id="IHs-vf-fMO"/>
@@ -71,7 +71,7 @@
         <!--TabPageViewController-->
         <scene sceneID="mOk-iH-QaN">
             <objects>
-                <viewController storyboardIdentifier="TabPageViewController" id="I8s-1L-p6j" customClass="TabPageViewController" customModule="FunRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TabPageViewController" id="I8s-1L-p6j" customClass="TabPageViewController" customModule="TabPageViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I9A-qc-J3M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,7 +112,7 @@
         <!--Page View Controller-->
         <scene sceneID="kHP-dt-TPj">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6cY-ZP-t4g" customClass="PageViewController" customModule="FunRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6cY-ZP-t4g" customClass="PageViewController" customModule="TabPageViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="OlL-KI-1jd"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5t-e8-MXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,7 +122,7 @@
         <!--Category Collection View Controller-->
         <scene sceneID="KKw-E2-MGH">
             <objects>
-                <viewController storyboardIdentifier="CategoryCollectionViewController" id="eyw-9B-e0E" customClass="CategoryCollectionViewController" customModule="FunRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryCollectionViewController" id="eyw-9B-e0E" customClass="CategoryCollectionViewController" customModule="TabPageViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ozv-ft-UgF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,14 +130,14 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eDA-Eg-chh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="23"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gmA-32-DGl">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="gmA-32-DGl">
                                     <size key="itemSize" width="125" height="23"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="IaW-PS-Y7K" customClass="CategoryCell" customModule="FunRecipes" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="IaW-PS-Y7K" customClass="CategoryCell" customModule="TabPageViewController" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">

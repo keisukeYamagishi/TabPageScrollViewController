@@ -72,7 +72,7 @@ extension CategoryCollectionViewController:UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellSize: CGFloat = self.view.frame.size.width/5 - 1
-        return CGSize(width: cellSize, height: 30)
+        return CGSize(width: cellSize, height: 23)
     }
 }
 
