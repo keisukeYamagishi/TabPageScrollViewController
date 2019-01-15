@@ -37,28 +37,33 @@ class PageViewController:UIPageViewController {
 
 extension PageViewController : UIPageViewControllerDataSource {
     
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        self.current += 1
+    
+    func pageViewController(viewController:UIViewController, isAfter:Bool) -> UIViewController? {
         
-        if self.current > (self.vcs.count - 1) {
-            self.current = (self.vcs.count - 1)
+        guard var index = self.vcs.map({$0}).index(of: viewController) else {
             return nil
-        }else{
-            return self.vcs[self.current]
         }
+        
+        if isAfter {
+            index += 1
+        }else{
+            index -= 1
+        }
+        
+        if index >= 0 && index < self.vcs.count {
+            return self.vcs[index]
+        }
+        return nil
     }
     
     func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        self.current -= 1
-        
-        if self.current < 0 {
-            self.current = 0
-            return nil
-        }else{
-            return self.vcs[self.current]
-        }
+                            viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        return self.pageViewController(viewController: viewController, isAfter: true)
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            viewControllerBefore viewController: UIViewController) -> UIViewController? {        
+        return self.pageViewController(viewController: viewController, isAfter: false)
     }
 }
 
