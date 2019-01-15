@@ -41,8 +41,6 @@ extension PageViewController : UIPageViewControllerDataSource {
                             viewControllerAfter viewController: UIViewController) -> UIViewController? {
         self.current += 1
         
-        print (self.current)
-        
         if self.current > (self.vcs.count - 1) {
             self.current = (self.vcs.count - 1)
             return nil
@@ -54,8 +52,6 @@ extension PageViewController : UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {
         self.current -= 1
-        
-        print (self.current)
         
         if self.current < 0 {
             self.current = 0
