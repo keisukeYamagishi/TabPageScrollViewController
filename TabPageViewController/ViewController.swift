@@ -12,16 +12,26 @@ class ViewController:UIViewController{
     
     static let identifer = "ViewController"
        
+    @IBOutlet weak var label: UILabel!
+    
     var number: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.label.text = self.number.description
+    }
+    
     func change(num:Int) {
         self.number = num + 1
         self.view.backgroundColor = self.color(num: num)
     }
+    
+    
     
     private func color (num:Int) -> UIColor {
         
