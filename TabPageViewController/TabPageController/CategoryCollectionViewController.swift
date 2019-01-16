@@ -56,7 +56,7 @@ class CategoryCollectionViewController:UIViewController{
     
     private func moveNavigationView(index:Int) {
         let frame = self.emurate.cellFrame(index: index)
-        self.collectionView.selectItem(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .left)
+        self.collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: {
             self.navigationView.frame = CGRect(x: frame.origin.x - self.collectionView.contentOffset.x,
                                                y: self.navigationView.frame.origin.y,
@@ -122,14 +122,9 @@ extension CategoryCollectionViewController: UIScrollViewDelegate {
     }
 }
 
-extension CategoryCollectionViewController:TabPageObserver{
-    func navigationViewObserver(direction: Direction) {
-        if self.observer.isFromNotify == true {
-            self.observer.isFromNotify = false
-            return
-        }
-        
-        self.observer.selected += direction.rawValue
+extension CategoryCollectionViewController:TaObserver{
+    func navigationViewObserver(index: Int) {
+        self.observer.selected = index
         
         if self.observer.selected < 0 {
             self.observer.selected = 0
@@ -139,7 +134,7 @@ extension CategoryCollectionViewController:TabPageObserver{
         
         self.observer.moveNavigationNotify(index: self.observer.selected)
         
-        self.collectionView.reloadData()
         self.moveNavigationView(index: self.observer.selected)
+        self.collectionView.reloadData()
     }
 }

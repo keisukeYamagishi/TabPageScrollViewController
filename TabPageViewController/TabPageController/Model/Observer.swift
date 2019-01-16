@@ -14,8 +14,8 @@ enum Sort:Int {
     case down = 1
 }
 
-protocol TabPageObserver {
-    func navigationViewObserver(direction: Direction)
+protocol TaObserver {
+    func navigationViewObserver(index:Int)
 }
 
 protocol TabChangeNotify {
@@ -32,14 +32,14 @@ class Observer {
     var viewControllers:[UIViewController] = []
     var isFromNotify:Bool = false
     var selected:Int = 0
-    var navigationObserver: TabPageObserver?
+    var navigationObserver: TaObserver?
     var tabBarNotify:TabChangeNotify?
     var delegate:TabPageControllerDelegate?
     
     init(){}
     
-    func movePosition (direction: Direction) {
-        self.navigationObserver?.navigationViewObserver(direction: direction)
+    func movePosition (index:Int) {
+        self.navigationObserver?.navigationViewObserver(index: index)
     }
     
     func tabNotify (index:IndexPath) {
