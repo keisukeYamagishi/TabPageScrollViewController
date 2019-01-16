@@ -9,11 +9,6 @@
 import Foundation
 import UIKit
 
-enum Sort:Int {
-    case up = 0
-    case down = 1
-}
-
 protocol TaObserver {
     func navigationViewObserver(index:Int)
 }

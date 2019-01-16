@@ -82,8 +82,7 @@ extension PageViewController : UIPageViewControllerDataSource {
 extension PageViewController:UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController,
-                            willTransitionTo pendingViewControllers: [UIViewController]){
-    }
+                            willTransitionTo pendingViewControllers: [UIViewController]){}
     
     func pageViewController(_ pageViewController: UIPageViewController,
                             didFinishAnimating finished: Bool,
@@ -96,11 +95,9 @@ extension PageViewController:UIPageViewControllerDelegate {
 
 extension PageViewController: UIScrollViewDelegate {
     
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    }
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {}
     
-    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-    }
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {}
 }
 
 extension PageViewController:TabChangeNotify{
