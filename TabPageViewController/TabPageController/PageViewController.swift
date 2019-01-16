@@ -15,16 +15,29 @@ class PageViewController:UIPageViewController {
     var vcs:[UIViewController] = []
     var observer:Observer!
     
+    var currentIndex: Int? {
+        guard let viewController = viewControllers?.first else {
+            return nil
+        }
+        return self.vcs.map{ $0 }.index(of: viewController)
+    }
+    
+    var beforeIndex:Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.dataSource = self
+        self.delegate = self
         
         self.setScrollView()
         
         self.observer.tabBarNotify = self
         
-        super.setViewControllers([self.vcs[0]], direction: .forward, animated: true, completion: nil)
+        super.setViewControllers([self.vcs[0]],
+                                 direction: .forward,
+                                 animated: true,
+                                 completion: nil)
     }
     
     private func setScrollView () {
@@ -66,28 +79,31 @@ extension PageViewController : UIPageViewControllerDataSource {
     }
 }
 
+extension PageViewController:UIPageViewControllerDelegate {
+    
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            willTransitionTo pendingViewControllers: [UIViewController]){}
+    
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            didFinishAnimating finished: Bool,
+                            previousViewControllers: [UIViewController],
+                            transitionCompleted completed: Bool){
+        
+        self.observer.movePosition(index: currentIndex!)
+    }
+}
+
 extension PageViewController: UIScrollViewDelegate {
     
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let scrollOffsetX = scrollView.contentOffset.x - view.frame.width
-        
-        if scrollOffsetX >= self.view.frame.size.width {
-            self.observer.movePosition(direction: .right)
-        }
-        
-        if scrollOffsetX < 0 && scrollOffsetX <= (self.view.frame.size.width * -1) {
-            self.observer.movePosition(direction: .left)
-        }
-    }
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {}
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {}
 }
 
 extension PageViewController:TabChangeNotify{
     
     func changeTagNotify(index: IndexPath) {
         if index.row != self.observer.selected {
-            
-            self.observer.isFromNotify = true
             
             let direction:NavigationDirection!
             
@@ -99,7 +115,10 @@ extension PageViewController:TabChangeNotify{
             
             self.observer.tabCangeNotfy(index: index.row)
             
-            super.setViewControllers([self.vcs[index.row]], direction: direction, animated: true, completion: nil)
+            super.setViewControllers([self.vcs[index.row]],
+                                     direction: direction,
+                                     animated: true,
+                                     completion: nil)
         }
     }
 }
