@@ -30,7 +30,6 @@ protocol TabPageControllerDelegate {
 class Observer {
     
     var viewControllers:[UIViewController] = []
-    var isFromNotify:Bool = false
     var selected:Int = 0
     var navigationObserver: TaObserver?
     var tabBarNotify:TabChangeNotify?

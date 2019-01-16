@@ -34,7 +34,10 @@ class PageViewController:UIPageViewController {
         
         self.observer.tabBarNotify = self
         
-        super.setViewControllers([self.vcs[0]], direction: .forward, animated: true, completion: nil)
+        super.setViewControllers([self.vcs[0]],
+                                 direction: .forward,
+                                 animated: true,
+                                 completion: nil)
     }
     
     private func setScrollView () {
@@ -105,8 +108,6 @@ extension PageViewController:TabChangeNotify{
     func changeTagNotify(index: IndexPath) {
         if index.row != self.observer.selected {
             
-            self.observer.isFromNotify = true
-            
             let direction:NavigationDirection!
             
             if index.row > self.observer.selected {
@@ -117,7 +118,10 @@ extension PageViewController:TabChangeNotify{
             
             self.observer.tabCangeNotfy(index: index.row)
             
-            super.setViewControllers([self.vcs[index.row]], direction: direction, animated: true, completion: nil)
+            super.setViewControllers([self.vcs[index.row]],
+                                     direction: direction,
+                                     animated: true,
+                                     completion: nil)
         }
     }
 }
