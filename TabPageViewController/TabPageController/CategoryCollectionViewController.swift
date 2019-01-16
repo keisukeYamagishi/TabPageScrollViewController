@@ -9,10 +9,6 @@
 import UIKit
 import SHColor
 
-protocol CategoryCollectionObserver {
-    func notify(index:IndexPath)
-}
-
 class CategoryCollectionViewController:UIViewController{
     
     @IBOutlet weak var collectionView:UICollectionView!

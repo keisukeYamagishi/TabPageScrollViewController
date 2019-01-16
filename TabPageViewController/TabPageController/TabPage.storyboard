@@ -130,24 +130,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vU-hO-IFn">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6vU-hO-IFn">
                                 <rect key="frame" x="0.0" y="26" width="124" height="3"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.094117647060000004" green="0.22352941179999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="3" id="azA-Rf-rag"/>
-                                    <constraint firstAttribute="width" constant="124" id="nop-fi-aX1"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eDA-Eg-chh" firstAttribute="leading" secondItem="Ozv-ft-UgF" secondAttribute="leading" id="18F-qz-x4w"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6vU-hO-IFn" secondAttribute="trailing" constant="10" id="8Ma-O9-FHF"/>
-                            <constraint firstItem="FJg-LK-28P" firstAttribute="bottom" secondItem="6vU-hO-IFn" secondAttribute="bottom" constant="1" id="9JL-7Q-rWS"/>
                             <constraint firstItem="eDA-Eg-chh" firstAttribute="top" secondItem="Ozv-ft-UgF" secondAttribute="top" id="JPJ-nZ-LIo"/>
                             <constraint firstAttribute="bottom" secondItem="eDA-Eg-chh" secondAttribute="bottom" constant="7" id="enS-dr-TyQ"/>
-                            <constraint firstItem="6vU-hO-IFn" firstAttribute="top" secondItem="eDA-Eg-chh" secondAttribute="bottom" constant="3" id="fE3-kU-KjM"/>
-                            <constraint firstItem="6vU-hO-IFn" firstAttribute="leading" secondItem="Ozv-ft-UgF" secondAttribute="leading" id="pHw-R2-0Pp"/>
                             <constraint firstAttribute="trailing" secondItem="eDA-Eg-chh" secondAttribute="trailing" id="udX-lW-bd4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FJg-LK-28P"/>
