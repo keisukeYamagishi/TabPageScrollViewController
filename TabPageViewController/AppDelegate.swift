@@ -67,9 +67,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate:TabPageDelegate{
+    
     func tabChangeNotify(index: IndexPath, vc: UIViewController) {
+        print ("index: \(index)")        
     }
     
-    func moveNavigationNotify(index: IndexPath, vc: UIViewController) {        
+    func moveNavigationNotify(index: IndexPath, vc: UIViewController) {
+        print ("index: \(index)")
     }
 }
