@@ -6,7 +6,7 @@
 
 ### Overview
 
-<img src="https://github.com/keisukeYamagishi/TabPageScrollViewController/blob/master/doc/tappage.gif">
+<img src="https://github.com/keisukeYamagishi/TabPageScrollViewController/blob/master/doc/pageScroll.gif">
 
 The tab bar at the top of the screen moves synchronously with page scrolling.
 
