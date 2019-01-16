@@ -4,18 +4,13 @@
 [![](https://img.shields.io/badge/lang-swift4.0-ff69b4.svg)](https://developer.apple.com/jp/swift/)
 [![](https://img.shields.io/badge/licence-MIT-green.svg)](https://github.com/keisukeYamagishi/HttpRequest/blob/master/LICENSE)
 
-### Overview
+## Overview
 
 <img src="https://github.com/keisukeYamagishi/TabPageScrollViewController/blob/master/doc/pageScroll.gif">
 
 The tab bar at the top of the screen moves synchronously with page scrolling.
 
 When you press a tab, it will transition to the page you pressed.
-
-
-However, this has not been done yet in the development stage,
-
-It is full of bugs.😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱😱
 
 It would be great if you would like to use UIPageViewController to build applications synchronized with the tab bar at the top of the screen.
 
@@ -61,5 +56,4 @@ self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
 ```
 
-
-# ⚠️this project is many bug!!!!LOL⚠️
+so nice 😏！
