@@ -11,7 +11,6 @@ import SHColor
 
 class PageViewController:UIPageViewController {
     
-    static let identifer = "PageViewController"
     var vcs:[UIViewController] = []
     var observer:Observer!
     
@@ -23,6 +22,15 @@ class PageViewController:UIPageViewController {
     }
     
     var beforeIndex:Int = 0
+    
+    override init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]? = nil) {
+        super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: [:])
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

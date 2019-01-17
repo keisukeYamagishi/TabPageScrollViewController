@@ -24,14 +24,9 @@ class ViewController:UIViewController{
         super.viewDidLayoutSubviews()
         
         self.label.text = self.number.description
+        
+        self.view.backgroundColor = self.color(num: self.number)
     }
-    
-    func change(num:Int) {
-        self.number = num + 1
-        self.view.backgroundColor = self.color(num: num)
-    }
-    
-    
     
     private func color (num:Int) -> UIColor {
         

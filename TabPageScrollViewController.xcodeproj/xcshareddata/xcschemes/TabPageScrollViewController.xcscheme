@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C70E827221D31EA700A1CD80"
-               BuildableName = "TabPageViewController.app"
-               BlueprintName = "TabPageViewController"
-               ReferencedContainer = "container:TabPageViewController.xcodeproj">
+               BuildableName = "TabPageScrollViewController.app"
+               BlueprintName = "TabPageScrollViewController"
+               ReferencedContainer = "container:TabPageScrollViewController.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C70E827221D31EA700A1CD80"
-            BuildableName = "TabPageViewController.app"
-            BlueprintName = "TabPageViewController"
-            ReferencedContainer = "container:TabPageViewController.xcodeproj">
+            BuildableName = "TabPageScrollViewController.app"
+            BlueprintName = "TabPageScrollViewController"
+            ReferencedContainer = "container:TabPageScrollViewController.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C70E827221D31EA700A1CD80"
-            BuildableName = "TabPageViewController.app"
-            BlueprintName = "TabPageViewController"
-            ReferencedContainer = "container:TabPageViewController.xcodeproj">
+            BuildableName = "TabPageScrollViewController.app"
+            BlueprintName = "TabPageScrollViewController"
+            ReferencedContainer = "container:TabPageScrollViewController.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C70E827221D31EA700A1CD80"
-            BuildableName = "TabPageViewController.app"
-            BlueprintName = "TabPageViewController"
-            ReferencedContainer = "container:TabPageViewController.xcodeproj">
+            BuildableName = "TabPageScrollViewController.app"
+            BlueprintName = "TabPageScrollViewController"
+            ReferencedContainer = "container:TabPageScrollViewController.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

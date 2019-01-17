@@ -11,10 +11,8 @@ import SHColor
 
 class CategoryCollectionViewController:UIViewController{
     
-    @IBOutlet weak var collectionView:UICollectionView!
-    @IBOutlet weak var navigationView: UIView!
-    
-    static let identifer = "CategoryCollectionViewController"
+    var collectionView:UICollectionView!
+    var navigationView: UIView!
     
     public var items:[String] = []
     private var emurate:Emurate!
@@ -22,6 +20,14 @@ class CategoryCollectionViewController:UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.collectionView = self.coll
+        
+        self.navigationView = self.navi
+        
+        self.view.addSubview(self.collectionView)
+        
+        self.view.addSubview(self.navigationView)
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -34,8 +40,29 @@ class CategoryCollectionViewController:UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-            
         self.setCellsPosition()
+    }
+    
+    private var coll: UICollectionView {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 23), collectionViewLayout: layout)
+        collectionView.backgroundColor = .white
+        
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        
+        collectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
+        return collectionView
+    }
+    
+    private var navi: UIView {
+        let view = UIView(frame: CGRect(x: 0, y: 26, width: 124, height: 3))
+        view.backgroundColor = .black
+        return view
     }
     
     private func setScrollView (){
