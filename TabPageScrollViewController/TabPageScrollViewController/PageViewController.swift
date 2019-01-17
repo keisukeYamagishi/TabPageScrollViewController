@@ -11,7 +11,6 @@ import SHColor
 
 class PageViewController:UIPageViewController {
     
-    static let identifer = "PageViewController"
     var vcs:[UIViewController] = []
     var observer:Observer!
     

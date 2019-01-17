@@ -13,6 +13,8 @@ class RootViewControler:TabPageScrollViewController {
     
     override func viewDidLoad() {
         
+        self.navigationController?.navigationBar.topItem?.title = "TabPage app demo"
+        
         self.delegate = self
         
         let vc1:ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController

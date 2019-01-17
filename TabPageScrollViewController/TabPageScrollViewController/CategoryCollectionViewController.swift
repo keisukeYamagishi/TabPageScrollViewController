@@ -14,8 +14,6 @@ class CategoryCollectionViewController:UIViewController{
     var collectionView:UICollectionView!
     var navigationView: UIView!
     
-    static let identifer = "CategoryCollectionViewController"
-    
     public var items:[String] = []
     private var emurate:Emurate!
     var observer:Observer!
@@ -42,14 +40,7 @@ class CategoryCollectionViewController:UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-            
         self.setCellsPosition()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-//        self.setCellsPosition()
-        
     }
     
     private var coll: UICollectionView {
@@ -144,21 +135,12 @@ extension CategoryCollectionViewController: UIScrollViewDelegate {
         
         let scrollOffsetX = scrollView.contentOffset.x
         
-        if let emurate = self.emurate {
-            let frame = emurate.cellFrame(index: self.observer.selected)
-            self.navigationView.frame = CGRect(x: frame.origin.x,
-                                               y: self.navigationView.frame.origin.y,
-                                               width: frame.size.width,
-                                               height: self.navigationView.frame.size.height)
-            self.navigationView.frame.origin.x = (scrollOffsetX * -1) + frame.origin.x
-        }
-        
-//        let frame = self.emurate.cellFrame(index: self.observer.selected)
-//        self.navigationView.frame = CGRect(x: frame.origin.x,
-//                                           y: self.navigationView.frame.origin.y,
-//                                           width: frame.size.width,
-//                                           height: self.navigationView.frame.size.height)
-//        self.navigationView.frame.origin.x = (scrollOffsetX * -1) + frame.origin.x
+        let frame = self.emurate.cellFrame(index: self.observer.selected)
+        self.navigationView.frame = CGRect(x: frame.origin.x,
+                                           y: self.navigationView.frame.origin.y,
+                                           width: frame.size.width,
+                                           height: self.navigationView.frame.size.height)
+        self.navigationView.frame.origin.x = (scrollOffsetX * -1) + frame.origin.x
         
     }
 }
