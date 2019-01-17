@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="0Jb-NB-gSt" customClass="CategoryCell" customModule="TabPageScrollViewController" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="125" height="23"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="125" height="23"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="GHG-Pz-U10">
+                        <rect key="frame" x="58.5" y="0.0" width="8" height="23"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="chA-Kw-IjD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="13"/>
+                        <color key="textColor" red="0.27058823529999998" green="0.58823529409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="GHG-Pz-U10" secondAttribute="bottom" id="3nd-AA-GUB"/>
+                <constraint firstItem="GHG-Pz-U10" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Jb-NB-gSt" secondAttribute="leading" constant="5" id="I61-b9-WlO"/>
+                <constraint firstItem="GHG-Pz-U10" firstAttribute="centerX" secondItem="0Jb-NB-gSt" secondAttribute="centerX" id="IMO-qM-Mti"/>
+                <constraint firstItem="GHG-Pz-U10" firstAttribute="top" secondItem="0Jb-NB-gSt" secondAttribute="top" id="J4P-Fl-Vcm"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GHG-Pz-U10" secondAttribute="trailing" constant="3" id="PQq-9P-t1C"/>
+            </constraints>
+            <size key="customSize" width="125" height="23"/>
+            <connections>
+                <outlet property="title" destination="GHG-Pz-U10" id="s92-Ug-cj8"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
