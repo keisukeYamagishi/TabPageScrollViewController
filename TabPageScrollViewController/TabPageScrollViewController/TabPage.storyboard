@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="-9" y="-734"/>
         </scene>
-        <!--TabPageViewController-->
+        <!--TabPageScrollViewController-->
         <scene sceneID="mOk-iH-QaN">
             <objects>
-                <viewController storyboardIdentifier="TabPageViewController" id="I8s-1L-p6j" customClass="TabPageViewController" customModule="TabPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TabPageScrollViewController" id="I8s-1L-p6j" customClass="TabPageScrollViewController" customModule="TabPageScrollViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I9A-qc-J3M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jk2-5I-7cJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="TabPageViewController" id="Cg7-Ho-VUi"/>
+                    <navigationItem key="navigationItem" title="TabPageScrollViewController" id="Cg7-Ho-VUi"/>
                     <connections>
                         <outlet property="headerView" destination="eCs-RA-e3f" id="8hY-2i-gQd"/>
                         <outlet property="pageView" destination="Abd-U4-Zxs" id="azG-qV-a2C"/>
@@ -72,7 +72,7 @@
         <!--Page View Controller-->
         <scene sceneID="kHP-dt-TPj">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6cY-ZP-t4g" customClass="PageViewController" customModule="TabPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6cY-ZP-t4g" customClass="PageViewController" customModule="TabPageScrollViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="OlL-KI-1jd"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5t-e8-MXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -82,7 +82,7 @@
         <!--Category Collection View Controller-->
         <scene sceneID="KKw-E2-MGH">
             <objects>
-                <viewController storyboardIdentifier="CategoryCollectionViewController" id="eyw-9B-e0E" customClass="CategoryCollectionViewController" customModule="TabPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryCollectionViewController" id="eyw-9B-e0E" customClass="CategoryCollectionViewController" customModule="TabPageScrollViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ozv-ft-UgF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,7 +97,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="IaW-PS-Y7K" customClass="CategoryCell" customModule="TabPageViewController" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="IaW-PS-Y7K" customClass="CategoryCell" customModule="TabPageScrollViewController" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">

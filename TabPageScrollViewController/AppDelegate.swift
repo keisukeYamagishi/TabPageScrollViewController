@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         
-        let page:TabPageViewController = pageView.topViewController as! TabPageViewController
+        let page:TabPageScrollViewController = pageView.topViewController as! TabPageScrollViewController
         page.delegate = self
         
         let vc1:ViewController = storyboard.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController

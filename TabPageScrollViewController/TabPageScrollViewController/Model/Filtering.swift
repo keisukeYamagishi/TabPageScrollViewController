@@ -1,6 +1,6 @@
 //
 //  Filtering.swift
-//  TabPageViewController
+//  TabPageScrollViewController
 //
 //  Created by Shichimitoucarashi on 1/13/19.
 //  Copyright © 2019 Shichimitoucarashi. All rights reserved.

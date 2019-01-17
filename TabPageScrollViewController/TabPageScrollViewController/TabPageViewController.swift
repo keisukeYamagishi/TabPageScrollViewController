@@ -13,7 +13,7 @@ protocol TabPageDelegate {
     func moveNavigationNotify(index:IndexPath, vc:UIViewController)
 }
 
-class TabPageViewController: UIViewController {
+class TabPageScrollViewController: UIViewController {
     
     @IBOutlet weak var headerView:UIView!
     @IBOutlet weak var pageView:UIView!
@@ -68,7 +68,7 @@ class TabPageViewController: UIViewController {
     }
 }
 
-extension TabPageViewController:TabPageControllerDelegate {
+extension TabPageScrollViewController:TabPageControllerDelegate {
     func tabChange(index: IndexPath, viewController: UIViewController) {
         self.delegate?.tabChangeNotify(index: index, vc: viewController)
     }
