@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SHColor
 
 class PageViewController:UIPageViewController {
     
@@ -90,7 +89,10 @@ extension PageViewController : UIPageViewControllerDataSource {
 extension PageViewController:UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController,
-                            willTransitionTo pendingViewControllers: [UIViewController]){}
+                            willTransitionTo pendingViewControllers: [UIViewController]){
+        
+        self.observer.willScrollViewController(index: currentIndex!, viewController: pendingViewControllers.first!)
+    }
     
     func pageViewController(_ pageViewController: UIPageViewController,
                             didFinishAnimating finished: Bool,
@@ -98,6 +100,7 @@ extension PageViewController:UIPageViewControllerDelegate {
                             transitionCompleted completed: Bool){
         
         self.observer.movePosition(index: currentIndex!)
+        self.observer.didScrollViewController(index: currentIndex!, viewController: previousViewControllers.first!)
     }
 }
 
@@ -121,7 +124,7 @@ extension PageViewController:TabChangeNotify{
                 direction = .reverse
             }
             
-            self.observer.tabCangeNotfy(index: index.row)
+            self.observer.tabCangeNotfy(index: index.row, viewController: self.vcs[currentIndex!])
             
             super.setViewControllers([self.vcs[index.row]],
                                      direction: direction,

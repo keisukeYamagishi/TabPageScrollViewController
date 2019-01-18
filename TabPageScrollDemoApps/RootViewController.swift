@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TabPageScrollViewController
 
 @available(iOS 11.0, *)
 class RootViewControler:TabPageScrollViewController {
@@ -61,11 +62,26 @@ class RootViewControler:TabPageScrollViewController {
 @available(iOS 11.0, *)
 extension RootViewControler:TabPageDelegate{
     
+    func willScrollPage(index: Int, viewController: UIViewController) {
+        
+        let vc:ViewController = viewController as! ViewController
+        
+        print ("index: \(index) viewController: \(vc.number)")
+    }
+    
+    func didScrollPage(index: Int, viewController: UIViewController) {
+        
+        let vc:ViewController = viewController as! ViewController
+        
+        print ("index: \(index) viewController: \(vc.number)")
+    }
+    
+    
     func tabChangeNotify(index: IndexPath, vc: UIViewController) {
         print ("index: \(index)")
     }
     
-    func moveNavigationNotify(index: IndexPath, vc: UIViewController) {
+    func moveNavigationNotify(index: IndexPath) {
         print ("index: \(index)")
     }
 }
