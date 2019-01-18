@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C70E827221D31EA700A1CD80"
-               BuildableName = "TabPageScrollViewController.app"
-               BlueprintName = "TabPageScrollViewController"
-               ReferencedContainer = "container:TabPageScrollViewController.xcodeproj">
+               BuildableName = "TabPageScrollDemoApps.app"
+               BlueprintName = "TabPageScrollDemoApps"
+               ReferencedContainer = "container:TabPageScrollDemoApps.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C70E827221D31EA700A1CD80"
-            BuildableName = "TabPageScrollViewController.app"
-            BlueprintName = "TabPageScrollViewController"
-            ReferencedContainer = "container:TabPageScrollViewController.xcodeproj">
+            BuildableName = "TabPageScrollDemoApps.app"
+            BlueprintName = "TabPageScrollDemoApps"
+            ReferencedContainer = "container:TabPageScrollDemoApps.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,18 +56,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C70E827221D31EA700A1CD80"
-            BuildableName = "TabPageScrollViewController.app"
-            BlueprintName = "TabPageScrollViewController"
-            ReferencedContainer = "container:TabPageScrollViewController.xcodeproj">
+            BuildableName = "TabPageScrollDemoApps.app"
+            BlueprintName = "TabPageScrollDemoApps"
+            ReferencedContainer = "container:TabPageScrollDemoApps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "disable"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -82,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C70E827221D31EA700A1CD80"
-            BuildableName = "TabPageScrollViewController.app"
-            BlueprintName = "TabPageScrollViewController"
-            ReferencedContainer = "container:TabPageScrollViewController.xcodeproj">
+            BuildableName = "TabPageScrollDemoApps.app"
+            BlueprintName = "TabPageScrollDemoApps"
+            ReferencedContainer = "container:TabPageScrollDemoApps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

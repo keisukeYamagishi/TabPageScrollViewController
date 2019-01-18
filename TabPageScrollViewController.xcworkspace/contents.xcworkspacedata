@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:TabPageScrollViewController.xcodeproj">
+      location = "group:/Users/keisukeyamagishi/Code/github/TabPageScrollViewController/TabPageScrollDemoApps.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
