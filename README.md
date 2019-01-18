@@ -14,6 +14,26 @@ When you press a tab, it will transition to the page you pressed.
 
 It would be great if you would like to use UIPageViewController to build applications synchronized with the tab bar at the top of the screen.
 
+## Cocoapods
+
+
+[CocoaPods](https://cocoapods.org/pods/TabPageScrollViewController) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+To integrate TabPageScrollViewController into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```
+vi ./Podfile
+```
+
+```Podfile
+target 'MyApp' do
+  pod 'TabPageScrollViewController'
+end
+```
+
 ## Use it
 
 ***Via SSH***: For those who plan on regularly making direct commits, cloning over SSH may provide a better experience (which requires uploading SSH keys to GitHub):
