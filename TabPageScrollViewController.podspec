@@ -21,4 +21,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '11.0'
 
   s.source_files  = "TabPageScrollViewController", "TabPageScrollViewController/**/*.swift"
+  s.resource = 'TabPageScrollViewController/**/*.{xib,storyboard}'
 end

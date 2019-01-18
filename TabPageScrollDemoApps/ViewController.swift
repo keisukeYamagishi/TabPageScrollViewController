@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SHColor
+//import SHColor
 
 class ViewController:UIViewController{
     
@@ -28,34 +28,33 @@ class ViewController:UIViewController{
         
         self.view.backgroundColor = self.color(num: self.number)
     }
-    
     private func color (num:Int) -> UIColor {
-        
+
         switch num {
         case 0:
-            return UIColor(hex:"5fc9f8")
+            return .white
         case 1:
-            return UIColor(hex:"fecb2e")
+            return .gray
         case 2:
-            return UIColor(hex:"fc3158")
+            return .darkGray
         case 3:
-            return UIColor(hex:"147efb")
+            return .cyan
         case 4:
-            return UIColor(hex:"53d769")
+            return .blue
         case 5:
-            return UIColor(hex:"fc3d39")
+            return .yellow
         case 6:
-            return UIColor(hex:"8e8e93")
+            return .magenta
         case 7:
-            return UIColor(hex:"fc3158")
+            return .orange
         case 8:
-            return UIColor(hex:"53d769")
+            return .purple
         case 9:
-            return UIColor(hex: "#028482")
+            return .brown
         case 10:
-            return UIColor(hex: "#B76EB8")
+            return .red
         default:
-            return UIColor(hex:"fc3158")
+            return .green
         }
     }
 }

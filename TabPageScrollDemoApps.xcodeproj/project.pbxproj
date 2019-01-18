@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		584787010CF0FC07440AB8B1 /* Pods_TabPageScrollViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ADB3DD14AABCD7C4DA5DF5D /* Pods_TabPageScrollViewController.framework */; };
+		A5F2FF62AF64AA4D27918481 /* Pods_TabPageScrollDemoApps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DEF8C78AE2DCBA2D5E35FE /* Pods_TabPageScrollDemoApps.framework */; };
 		C70E827721D31EA700A1CD80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E827621D31EA700A1CD80 /* AppDelegate.swift */; };
 		C70E827E21D31EA900A1CD80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70E827D21D31EA900A1CD80 /* Assets.xcassets */; };
 		C70E828121D31EA900A1CD80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70E827F21D31EA900A1CD80 /* LaunchScreen.storyboard */; };
@@ -22,6 +22,7 @@
 		C73E390721F1AF8A0059701A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E390421F1AF8A0059701A /* CategoryCell.swift */; };
 		C73E390821F1AF8A0059701A /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C73E390521F1AF8A0059701A /* CategoryCell.xib */; };
 		C73E390A21F1B0420059701A /* TabPageScrollViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C73E38E721F1AF390059701A /* TabPageScrollViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C73E393021F1C1C50059701A /* Pods_TabPageScrollViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ADB3DD14AABCD7C4DA5DF5D /* Pods_TabPageScrollViewController.framework */; };
 		C73F048221EB5AB200389E3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C73F048121EB5AB200389E3D /* Main.storyboard */; };
 		C73F048421EB5AFA00389E3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F048321EB5AFA00389E3D /* ViewController.swift */; };
 		C778555E21F0CC52001D542B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C778555D21F0CC52001D542B /* RootViewController.swift */; };
@@ -52,18 +53,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1721FE3FE389AE209DD48CF8 /* Pods-TabPageScrollViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabPageScrollViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TabPageScrollViewController/Pods-TabPageScrollViewController.debug.xcconfig"; sourceTree = "<group>"; };
 		1CA6D9E54AF22012A046688F /* Pods_FunRecipesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunRecipesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		491B051FB4DBDFC5EA4F1F37 /* Pods-TabPageViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabPageViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TabPageViewController/Pods-TabPageViewController.debug.xcconfig"; sourceTree = "<group>"; };
-		5AA7A33D6954C00F4420E861 /* Pods-FunRecipesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunRecipesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunRecipesTests/Pods-FunRecipesTests.release.xcconfig"; sourceTree = "<group>"; };
+		51DEF8C78AE2DCBA2D5E35FE /* Pods_TabPageScrollDemoApps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabPageScrollDemoApps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADB3DD14AABCD7C4DA5DF5D /* Pods_TabPageScrollViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabPageScrollViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		769FD1FC7038F6E1984BC2CF /* Pods-FunRecipesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunRecipesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunRecipesUITests/Pods-FunRecipesUITests.release.xcconfig"; sourceTree = "<group>"; };
-		83336EBEA32442681CA3173D /* Pods-TabPageViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabPageViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-TabPageViewController/Pods-TabPageViewController.release.xcconfig"; sourceTree = "<group>"; };
+		80281161B4B05EF3198FFDE1 /* Pods-TabPageScrollDemoApps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabPageScrollDemoApps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TabPageScrollDemoApps/Pods-TabPageScrollDemoApps.debug.xcconfig"; sourceTree = "<group>"; };
+		87494C660C8B231697113F32 /* Pods-TabPageScrollDemoApps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabPageScrollDemoApps.release.xcconfig"; path = "Pods/Target Support Files/Pods-TabPageScrollDemoApps/Pods-TabPageScrollDemoApps.release.xcconfig"; sourceTree = "<group>"; };
 		AF8D37733165B7213019B8EB /* Pods_FunRecipes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunRecipes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B620C0A42A17456B44577C3D /* Pods-TabPageScrollViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabPageScrollViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-TabPageScrollViewController/Pods-TabPageScrollViewController.release.xcconfig"; sourceTree = "<group>"; };
-		B6AE6F3F08413D7FB92887B6 /* Pods-FunRecipesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunRecipesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunRecipesTests/Pods-FunRecipesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1E4FEC331BAADB9D54B2856 /* Pods_TabPageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabPageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C490D28D5F90EACD7E929DD9 /* Pods-FunRecipes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunRecipes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunRecipes/Pods-FunRecipes.debug.xcconfig"; sourceTree = "<group>"; };
 		C70E827321D31EA700A1CD80 /* TabPageScrollDemoApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabPageScrollDemoApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70E827621D31EA700A1CD80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70E827D21D31EA900A1CD80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,9 +81,7 @@
 		C73F048121EB5AB200389E3D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C73F048321EB5AFA00389E3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C778555D21F0CC52001D542B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		C79919A1527675128593BB37 /* Pods-FunRecipes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunRecipes.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunRecipes/Pods-FunRecipes.release.xcconfig"; sourceTree = "<group>"; };
 		E73718AE401122E3E6247DC0 /* Pods_FunRecipesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunRecipesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0F78F9DE5DE42940A003645 /* Pods-FunRecipesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunRecipesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunRecipesUITests/Pods-FunRecipesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				584787010CF0FC07440AB8B1 /* Pods_TabPageScrollViewController.framework in Frameworks */,
+				C73E393021F1C1C50059701A /* Pods_TabPageScrollViewController.framework in Frameworks */,
+				A5F2FF62AF64AA4D27918481 /* Pods_TabPageScrollDemoApps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,16 +107,8 @@
 		02BFA683F510ECFA3A0E854F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C490D28D5F90EACD7E929DD9 /* Pods-FunRecipes.debug.xcconfig */,
-				C79919A1527675128593BB37 /* Pods-FunRecipes.release.xcconfig */,
-				B6AE6F3F08413D7FB92887B6 /* Pods-FunRecipesTests.debug.xcconfig */,
-				5AA7A33D6954C00F4420E861 /* Pods-FunRecipesTests.release.xcconfig */,
-				F0F78F9DE5DE42940A003645 /* Pods-FunRecipesUITests.debug.xcconfig */,
-				769FD1FC7038F6E1984BC2CF /* Pods-FunRecipesUITests.release.xcconfig */,
-				491B051FB4DBDFC5EA4F1F37 /* Pods-TabPageViewController.debug.xcconfig */,
-				83336EBEA32442681CA3173D /* Pods-TabPageViewController.release.xcconfig */,
-				1721FE3FE389AE209DD48CF8 /* Pods-TabPageScrollViewController.debug.xcconfig */,
-				B620C0A42A17456B44577C3D /* Pods-TabPageScrollViewController.release.xcconfig */,
+				80281161B4B05EF3198FFDE1 /* Pods-TabPageScrollDemoApps.debug.xcconfig */,
+				87494C660C8B231697113F32 /* Pods-TabPageScrollDemoApps.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -135,6 +122,7 @@
 				1CA6D9E54AF22012A046688F /* Pods_FunRecipesUITests.framework */,
 				C1E4FEC331BAADB9D54B2856 /* Pods_TabPageViewController.framework */,
 				5ADB3DD14AABCD7C4DA5DF5D /* Pods_TabPageScrollViewController.framework */,
+				51DEF8C78AE2DCBA2D5E35FE /* Pods_TabPageScrollDemoApps.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -225,12 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C70E829B21D31EA900A1CD80 /* Build configuration list for PBXNativeTarget "TabPageScrollDemoApps" */;
 			buildPhases = (
-				41FD0C3BF90BBA8A26455C95 /* [CP] Check Pods Manifest.lock */,
+				C5044B303D97FA438DE0236F /* [CP] Check Pods Manifest.lock */,
 				C70E826F21D31EA700A1CD80 /* Sources */,
 				C70E827021D31EA700A1CD80 /* Frameworks */,
 				C70E827121D31EA700A1CD80 /* Resources */,
-				7510E5B2AE2F8FE55DF3CD98 /* [CP] Embed Pods Frameworks */,
 				C73E390D21F1B0420059701A /* Embed Frameworks */,
+				6057474C7BA875A58A78C06F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,7 +309,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		41FD0C3BF90BBA8A26455C95 /* [CP] Check Pods Manifest.lock */ = {
+		6057474C7BA875A58A78C06F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TabPageScrollDemoApps/Pods-TabPageScrollDemoApps-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SHColor/SHColor.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SHColor.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TabPageScrollDemoApps/Pods-TabPageScrollDemoApps-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5044B303D97FA438DE0236F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -336,33 +346,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TabPageScrollViewController-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TabPageScrollDemoApps-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7510E5B2AE2F8FE55DF3CD98 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TabPageScrollViewController/Pods-TabPageScrollViewController-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SHColor/SHColor.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SHColor.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TabPageScrollViewController/Pods-TabPageScrollViewController-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -533,7 +521,7 @@
 		};
 		C70E829C21D31EA900A1CD80 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1721FE3FE389AE209DD48CF8 /* Pods-TabPageScrollViewController.debug.xcconfig */;
+			baseConfigurationReference = 80281161B4B05EF3198FFDE1 /* Pods-TabPageScrollDemoApps.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -554,7 +542,7 @@
 		};
 		C70E829D21D31EA900A1CD80 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B620C0A42A17456B44577C3D /* Pods-TabPageScrollViewController.release.xcconfig */;
+			baseConfigurationReference = 87494C660C8B231697113F32 /* Pods-TabPageScrollDemoApps.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
