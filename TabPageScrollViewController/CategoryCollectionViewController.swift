@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SHColor
 
 class CategoryCollectionViewController:UIViewController{
     
@@ -55,7 +54,7 @@ class CategoryCollectionViewController:UIViewController{
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         
-        collectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
+        collectionView.register(UINib(nibName: "CategoryCell", bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: "Cell")
         return collectionView
     }
     

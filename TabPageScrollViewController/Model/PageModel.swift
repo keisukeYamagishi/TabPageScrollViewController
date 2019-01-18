@@ -9,15 +9,10 @@
 import Foundation
 import UIKit
 
-enum Direction:Int {
-    case left = -1
-    case right = 1
-}
-
-struct TabItem {
-    var title:String = ""
-    var viewController:UIViewController!
-    init(title:String,vc:UIViewController) {
+public struct TabItem {
+    public var title:String = ""
+    public var viewController:UIViewController!
+    public init(title:String,vc:UIViewController) {
         self.title = title
         self.viewController = vc
     }

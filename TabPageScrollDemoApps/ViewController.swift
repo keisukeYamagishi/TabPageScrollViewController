@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SHColor
 
 class ViewController:UIViewController{
     

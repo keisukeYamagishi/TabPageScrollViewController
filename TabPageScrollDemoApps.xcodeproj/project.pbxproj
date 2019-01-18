@@ -11,19 +11,45 @@
 		C70E827721D31EA700A1CD80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E827621D31EA700A1CD80 /* AppDelegate.swift */; };
 		C70E827E21D31EA900A1CD80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70E827D21D31EA900A1CD80 /* Assets.xcassets */; };
 		C70E828121D31EA900A1CD80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70E827F21D31EA900A1CD80 /* LaunchScreen.storyboard */; };
-		C73F047321EB4FFF00389E3D /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F046921EB4FFF00389E3D /* CategoryCollectionViewController.swift */; };
-		C73F047521EB4FFF00389E3D /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F046C21EB4FFF00389E3D /* Observer.swift */; };
-		C73F047621EB4FFF00389E3D /* Emurate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F046D21EB4FFF00389E3D /* Emurate.swift */; };
-		C73F047721EB4FFF00389E3D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F046E21EB4FFF00389E3D /* PageModel.swift */; };
-		C73F047821EB4FFF00389E3D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F047021EB4FFF00389E3D /* CategoryCell.swift */; };
-		C73F047921EB4FFF00389E3D /* TabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F047121EB4FFF00389E3D /* TabPageViewController.swift */; };
-		C73F047A21EB4FFF00389E3D /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F047221EB4FFF00389E3D /* PageViewController.swift */; };
-		C73F048021EB547500389E3D /* Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F047F21EB547500389E3D /* Filtering.swift */; };
+		C73E38EB21F1AF390059701A /* TabPageScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C73E38E921F1AF390059701A /* TabPageScrollViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C73E38F621F1AF7A0059701A /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E38F421F1AF7A0059701A /* CategoryCollectionViewController.swift */; };
+		C73E38FD21F1AF820059701A /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E38F821F1AF820059701A /* Observer.swift */; };
+		C73E38FE21F1AF820059701A /* Emurate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E38F921F1AF820059701A /* Emurate.swift */; };
+		C73E38FF21F1AF820059701A /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E38FA21F1AF820059701A /* PageModel.swift */; };
+		C73E390021F1AF820059701A /* Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E38FB21F1AF820059701A /* Filtering.swift */; };
+		C73E390121F1AF820059701A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E38FC21F1AF820059701A /* PageViewController.swift */; };
+		C73E390621F1AF8A0059701A /* TabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E390221F1AF8A0059701A /* TabPageViewController.swift */; };
+		C73E390721F1AF8A0059701A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E390421F1AF8A0059701A /* CategoryCell.swift */; };
+		C73E390821F1AF8A0059701A /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C73E390521F1AF8A0059701A /* CategoryCell.xib */; };
+		C73E390A21F1B0420059701A /* TabPageScrollViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C73E38E721F1AF390059701A /* TabPageScrollViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C73F048221EB5AB200389E3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C73F048121EB5AB200389E3D /* Main.storyboard */; };
 		C73F048421EB5AFA00389E3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F048321EB5AFA00389E3D /* ViewController.swift */; };
-		C778555821F08745001D542B /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C778555721F08745001D542B /* CategoryCell.xib */; };
 		C778555E21F0CC52001D542B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C778555D21F0CC52001D542B /* RootViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C73E390B21F1B0420059701A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C70E826B21D31EA700A1CD80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C73E38E621F1AF390059701A;
+			remoteInfo = TabPageScrollViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C73E390D21F1B0420059701A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C73E390A21F1B0420059701A /* TabPageScrollViewController.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1721FE3FE389AE209DD48CF8 /* Pods-TabPageScrollViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabPageScrollViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TabPageScrollViewController/Pods-TabPageScrollViewController.debug.xcconfig"; sourceTree = "<group>"; };
@@ -38,22 +64,26 @@
 		B6AE6F3F08413D7FB92887B6 /* Pods-FunRecipesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunRecipesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunRecipesTests/Pods-FunRecipesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1E4FEC331BAADB9D54B2856 /* Pods_TabPageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabPageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C490D28D5F90EACD7E929DD9 /* Pods-FunRecipes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunRecipes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunRecipes/Pods-FunRecipes.debug.xcconfig"; sourceTree = "<group>"; };
-		C70E827321D31EA700A1CD80 /* TabPageScrollViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabPageScrollViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70E827321D31EA700A1CD80 /* TabPageScrollDemoApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabPageScrollDemoApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70E827621D31EA700A1CD80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70E827D21D31EA900A1CD80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C70E828021D31EA900A1CD80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C70E828221D31EA900A1CD80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C73F046921EB4FFF00389E3D /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
-		C73F046C21EB4FFF00389E3D /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
-		C73F046D21EB4FFF00389E3D /* Emurate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emurate.swift; sourceTree = "<group>"; };
-		C73F046E21EB4FFF00389E3D /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
-		C73F047021EB4FFF00389E3D /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		C73F047121EB4FFF00389E3D /* TabPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageViewController.swift; sourceTree = "<group>"; };
-		C73F047221EB4FFF00389E3D /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		C73F047F21EB547500389E3D /* Filtering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filtering.swift; sourceTree = "<group>"; };
+		C73E38C621F1AB040059701A /* TabPageScrollViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TabPageScrollViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C73E38E721F1AF390059701A /* TabPageScrollViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TabPageScrollViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C73E38E921F1AF390059701A /* TabPageScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabPageScrollViewController.h; sourceTree = "<group>"; };
+		C73E38EA21F1AF390059701A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C73E38F421F1AF7A0059701A /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		C73E38F821F1AF820059701A /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		C73E38F921F1AF820059701A /* Emurate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emurate.swift; sourceTree = "<group>"; };
+		C73E38FA21F1AF820059701A /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
+		C73E38FB21F1AF820059701A /* Filtering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtering.swift; sourceTree = "<group>"; };
+		C73E38FC21F1AF820059701A /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		C73E390221F1AF8A0059701A /* TabPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageViewController.swift; sourceTree = "<group>"; };
+		C73E390421F1AF8A0059701A /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		C73E390521F1AF8A0059701A /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		C73F048121EB5AB200389E3D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C73F048321EB5AFA00389E3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C778555721F08745001D542B /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		C778555D21F0CC52001D542B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C79919A1527675128593BB37 /* Pods-FunRecipes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunRecipes.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunRecipes/Pods-FunRecipes.release.xcconfig"; sourceTree = "<group>"; };
 		E73718AE401122E3E6247DC0 /* Pods_FunRecipesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunRecipesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +96,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				584787010CF0FC07440AB8B1 /* Pods_TabPageScrollViewController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C73E38E421F1AF390059701A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +129,7 @@
 		A6F71E1A04B641C273243B8F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C73E38C621F1AB040059701A /* TabPageScrollViewController.framework */,
 				AF8D37733165B7213019B8EB /* Pods_FunRecipes.framework */,
 				E73718AE401122E3E6247DC0 /* Pods_FunRecipesTests.framework */,
 				1CA6D9E54AF22012A046688F /* Pods_FunRecipesUITests.framework */,
@@ -104,7 +142,8 @@
 		C70E826A21D31EA700A1CD80 = {
 			isa = PBXGroup;
 			children = (
-				C70E827521D31EA700A1CD80 /* TabPageScrollViewController */,
+				C70E827521D31EA700A1CD80 /* TabPageScrollDemoApps */,
+				C73E38E821F1AF390059701A /* TabPageScrollViewController */,
 				C70E827421D31EA700A1CD80 /* Products */,
 				02BFA683F510ECFA3A0E854F /* Pods */,
 				A6F71E1A04B641C273243B8F /* Frameworks */,
@@ -114,12 +153,13 @@
 		C70E827421D31EA700A1CD80 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C70E827321D31EA700A1CD80 /* TabPageScrollViewController.app */,
+				C70E827321D31EA700A1CD80 /* TabPageScrollDemoApps.app */,
+				C73E38E721F1AF390059701A /* TabPageScrollViewController.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C70E827521D31EA700A1CD80 /* TabPageScrollViewController */ = {
+		C70E827521D31EA700A1CD80 /* TabPageScrollDemoApps */ = {
 			isa = PBXGroup;
 			children = (
 				C70E827621D31EA700A1CD80 /* AppDelegate.swift */,
@@ -129,64 +169,96 @@
 				C70E827D21D31EA900A1CD80 /* Assets.xcassets */,
 				C70E827F21D31EA900A1CD80 /* LaunchScreen.storyboard */,
 				C70E828221D31EA900A1CD80 /* Info.plist */,
-				C73F046821EB4FFF00389E3D /* TabPageScrollViewController */,
+			);
+			path = TabPageScrollDemoApps;
+			sourceTree = "<group>";
+		};
+		C73E38E821F1AF390059701A /* TabPageScrollViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C73E390221F1AF8A0059701A /* TabPageViewController.swift */,
+				C73E390321F1AF8A0059701A /* View */,
+				C73E38F421F1AF7A0059701A /* CategoryCollectionViewController.swift */,
+				C73E38F721F1AF820059701A /* Model */,
+				C73E38FC21F1AF820059701A /* PageViewController.swift */,
+				C73E38E921F1AF390059701A /* TabPageScrollViewController.h */,
+				C73E38EA21F1AF390059701A /* Info.plist */,
 			);
 			path = TabPageScrollViewController;
 			sourceTree = "<group>";
 		};
-		C73F046821EB4FFF00389E3D /* TabPageScrollViewController */ = {
+		C73E38F721F1AF820059701A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C73F046B21EB4FFF00389E3D /* Model */,
-				C73F046F21EB4FFF00389E3D /* View */,
-				C73F047121EB4FFF00389E3D /* TabPageViewController.swift */,
-				C73F047221EB4FFF00389E3D /* PageViewController.swift */,
-				C73F046921EB4FFF00389E3D /* CategoryCollectionViewController.swift */,
-			);
-			path = TabPageScrollViewController;
-			sourceTree = "<group>";
-		};
-		C73F046B21EB4FFF00389E3D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C73F046C21EB4FFF00389E3D /* Observer.swift */,
-				C73F046D21EB4FFF00389E3D /* Emurate.swift */,
-				C73F046E21EB4FFF00389E3D /* PageModel.swift */,
-				C73F047F21EB547500389E3D /* Filtering.swift */,
+				C73E38F821F1AF820059701A /* Observer.swift */,
+				C73E38F921F1AF820059701A /* Emurate.swift */,
+				C73E38FA21F1AF820059701A /* PageModel.swift */,
+				C73E38FB21F1AF820059701A /* Filtering.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		C73F046F21EB4FFF00389E3D /* View */ = {
+		C73E390321F1AF8A0059701A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C73F047021EB4FFF00389E3D /* CategoryCell.swift */,
-				C778555721F08745001D542B /* CategoryCell.xib */,
+				C73E390421F1AF8A0059701A /* CategoryCell.swift */,
+				C73E390521F1AF8A0059701A /* CategoryCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		C73E38E221F1AF390059701A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C73E38EB21F1AF390059701A /* TabPageScrollViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		C70E827221D31EA700A1CD80 /* TabPageScrollViewController */ = {
+		C70E827221D31EA700A1CD80 /* TabPageScrollDemoApps */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C70E829B21D31EA900A1CD80 /* Build configuration list for PBXNativeTarget "TabPageScrollViewController" */;
+			buildConfigurationList = C70E829B21D31EA900A1CD80 /* Build configuration list for PBXNativeTarget "TabPageScrollDemoApps" */;
 			buildPhases = (
 				41FD0C3BF90BBA8A26455C95 /* [CP] Check Pods Manifest.lock */,
 				C70E826F21D31EA700A1CD80 /* Sources */,
 				C70E827021D31EA700A1CD80 /* Frameworks */,
 				C70E827121D31EA700A1CD80 /* Resources */,
 				7510E5B2AE2F8FE55DF3CD98 /* [CP] Embed Pods Frameworks */,
+				C73E390D21F1B0420059701A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C73E390C21F1B0420059701A /* PBXTargetDependency */,
+			);
+			name = TabPageScrollDemoApps;
+			productName = FunRecipes;
+			productReference = C70E827321D31EA700A1CD80 /* TabPageScrollDemoApps.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C73E38E621F1AF390059701A /* TabPageScrollViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C73E38F021F1AF390059701A /* Build configuration list for PBXNativeTarget "TabPageScrollViewController" */;
+			buildPhases = (
+				C73E38E221F1AF390059701A /* Headers */,
+				C73E38E321F1AF390059701A /* Sources */,
+				C73E38E421F1AF390059701A /* Frameworks */,
+				C73E38E521F1AF390059701A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = TabPageScrollViewController;
-			productName = FunRecipes;
-			productReference = C70E827321D31EA700A1CD80 /* TabPageScrollViewController.app */;
-			productType = "com.apple.product-type.application";
+			productName = TabPageScrollViewController;
+			productReference = C73E38E721F1AF390059701A /* TabPageScrollViewController.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -194,6 +266,7 @@
 		C70E826B21D31EA700A1CD80 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Shichimitoucarashi;
@@ -201,9 +274,13 @@
 					C70E827221D31EA700A1CD80 = {
 						CreatedOnToolsVersion = 10.1;
 					};
+					C73E38E621F1AF390059701A = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
 				};
 			};
-			buildConfigurationList = C70E826E21D31EA700A1CD80 /* Build configuration list for PBXProject "TabPageScrollViewController" */;
+			buildConfigurationList = C70E826E21D31EA700A1CD80 /* Build configuration list for PBXProject "TabPageScrollDemoApps" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -216,7 +293,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C70E827221D31EA700A1CD80 /* TabPageScrollViewController */,
+				C70E827221D31EA700A1CD80 /* TabPageScrollDemoApps */,
+				C73E38E621F1AF390059701A /* TabPageScrollViewController */,
 			);
 		};
 /* End PBXProject section */
@@ -226,10 +304,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C778555821F08745001D542B /* CategoryCell.xib in Resources */,
 				C70E828121D31EA900A1CD80 /* LaunchScreen.storyboard in Resources */,
 				C70E827E21D31EA900A1CD80 /* Assets.xcassets in Resources */,
 				C73F048221EB5AB200389E3D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C73E38E521F1AF390059701A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C73E390821F1AF8A0059701A /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,21 +372,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C73F047921EB4FFF00389E3D /* TabPageViewController.swift in Sources */,
-				C73F047521EB4FFF00389E3D /* Observer.swift in Sources */,
-				C73F047321EB4FFF00389E3D /* CategoryCollectionViewController.swift in Sources */,
 				C778555E21F0CC52001D542B /* RootViewController.swift in Sources */,
 				C73F048421EB5AFA00389E3D /* ViewController.swift in Sources */,
-				C73F047821EB4FFF00389E3D /* CategoryCell.swift in Sources */,
 				C70E827721D31EA700A1CD80 /* AppDelegate.swift in Sources */,
-				C73F047A21EB4FFF00389E3D /* PageViewController.swift in Sources */,
-				C73F047621EB4FFF00389E3D /* Emurate.swift in Sources */,
-				C73F048021EB547500389E3D /* Filtering.swift in Sources */,
-				C73F047721EB4FFF00389E3D /* PageModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C73E38E321F1AF390059701A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C73E38F621F1AF7A0059701A /* CategoryCollectionViewController.swift in Sources */,
+				C73E390621F1AF8A0059701A /* TabPageViewController.swift in Sources */,
+				C73E390121F1AF820059701A /* PageViewController.swift in Sources */,
+				C73E38FF21F1AF820059701A /* PageModel.swift in Sources */,
+				C73E38FD21F1AF820059701A /* Observer.swift in Sources */,
+				C73E390721F1AF8A0059701A /* CategoryCell.swift in Sources */,
+				C73E390021F1AF820059701A /* Filtering.swift in Sources */,
+				C73E38FE21F1AF820059701A /* Emurate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C73E390C21F1B0420059701A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C73E38E621F1AF390059701A /* TabPageScrollViewController */;
+			targetProxy = C73E390B21F1B0420059701A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C70E827F21D31EA900A1CD80 /* LaunchScreen.storyboard */ = {
@@ -366,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +521,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -435,15 +535,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1721FE3FE389AE209DD48CF8 /* Pods-TabPageScrollViewController.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D3DW67HS9F;
-				INFOPLIST_FILE = TabPageScrollViewController/Info.plist;
+				INFOPLIST_FILE = TabPageScrollDemoApps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.FunRecipes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.pagescroll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,25 +556,88 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B620C0A42A17456B44577C3D /* Pods-TabPageScrollViewController.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D3DW67HS9F;
-				INFOPLIST_FILE = TabPageScrollViewController/Info.plist;
+				INFOPLIST_FILE = TabPageScrollDemoApps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.FunRecipes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.pagescroll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
+		C73E38F121F1AF390059701A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = D3DW67HS9F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TabPageScrollViewController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.TabPageScrollViewController;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C73E38F221F1AF390059701A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = D3DW67HS9F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TabPageScrollViewController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.TabPageScrollViewController;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C70E826E21D31EA700A1CD80 /* Build configuration list for PBXProject "TabPageScrollViewController" */ = {
+		C70E826E21D31EA700A1CD80 /* Build configuration list for PBXProject "TabPageScrollDemoApps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C70E829921D31EA900A1CD80 /* Debug */,
@@ -481,11 +646,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C70E829B21D31EA900A1CD80 /* Build configuration list for PBXNativeTarget "TabPageScrollViewController" */ = {
+		C70E829B21D31EA900A1CD80 /* Build configuration list for PBXNativeTarget "TabPageScrollDemoApps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C70E829C21D31EA900A1CD80 /* Debug */,
 				C70E829D21D31EA900A1CD80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C73E38F021F1AF390059701A /* Build configuration list for PBXNativeTarget "TabPageScrollViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C73E38F121F1AF390059701A /* Debug */,
+				C73E38F221F1AF390059701A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

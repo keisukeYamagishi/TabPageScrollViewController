@@ -8,13 +8,15 @@
 
 import UIKit
 
-protocol TabPageDelegate {
+public protocol TabPageDelegate {
+    func willScrollPage(index:Int,viewController:UIViewController)
+    func didScrollPage(index:Int,viewController:UIViewController)
     func tabChangeNotify(index:IndexPath, vc:UIViewController)
-    func moveNavigationNotify(index:IndexPath, vc:UIViewController)
+    func moveNavigationNotify(index:IndexPath)
 }
 
 @available(iOS 11.0, *)
-class TabPageScrollViewController: UIViewController {
+open class TabPageScrollViewController: UIViewController {
     
     var headerView:UIView!
     var pageView:UIView!
@@ -30,7 +32,7 @@ class TabPageScrollViewController: UIViewController {
     private var titles:[String] = []
     private var vcs:[UIViewController] = []
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         let filtering = Filtering(items: self.tabItems)
@@ -55,7 +57,7 @@ class TabPageScrollViewController: UIViewController {
         self.setChildViewController()
     }
     
-    override func viewWillLayoutSubviews() {
+    override open func viewWillLayoutSubviews() {
         
         super.viewWillLayoutSubviews()
         
@@ -175,11 +177,20 @@ class TabPageScrollViewController: UIViewController {
 
 @available(iOS 11.0, *)
 extension TabPageScrollViewController:TabPageControllerDelegate {
+    
+    func willScrollPageViewController(index: Int, viewController: UIViewController) {
+        self.delegate?.willScrollPage(index: index, viewController: viewController)
+    }
+    
+    func didScrollPageViewController(index: Int, viewController: UIViewController) {
+        self.delegate?.didScrollPage(index: index, viewController: viewController)
+    }
+    
     func tabChange(index: IndexPath, viewController: UIViewController) {
         self.delegate?.tabChangeNotify(index: index, vc: viewController)
     }
     
-    func moveNavigationView(index: IndexPath, vc: UIViewController) {
-        self.delegate?.moveNavigationNotify(index: index, vc: vc)
+    func moveNavigationView(index: IndexPath) {
+        self.delegate?.moveNavigationNotify(index: index)
     }        
 }

@@ -18,11 +18,13 @@ protocol TabChangeNotify {
 }
 
 protocol TabPageControllerDelegate {
+    func willScrollPageViewController (index:Int,viewController:UIViewController)
+    func didScrollPageViewController (index:Int,viewController:UIViewController)
     func tabChange(index:IndexPath, viewController:UIViewController)
-    func moveNavigationView(index:IndexPath, vc:UIViewController)
+    func moveNavigationView(index:IndexPath)
 }
 
-class Observer {
+public class Observer {
     
     var viewControllers:[UIViewController] = []
     var selected:Int = 0
@@ -40,12 +42,20 @@ class Observer {
         self.tabBarNotify?.changeTagNotify(index: index)
     }
     
-    func tabCangeNotfy(index:Int) {
-        self.delegate?.tabChange(index: IndexPath(row: index, section: 0), viewController: self.viewControllers[index])
+    func willScrollViewController (index:Int,viewController:UIViewController) {
+        self.delegate?.willScrollPageViewController(index: index, viewController: viewController)
+    }
+    
+    func didScrollViewController (index: Int, viewController:UIViewController) {
+        self.delegate?.didScrollPageViewController(index: index, viewController: viewController)
+    }
+    
+    func tabCangeNotfy(index:Int,viewController:UIViewController) {
+        self.delegate?.tabChange(index: IndexPath(row: index, section: 0), viewController: viewController)
     }
     
     func moveNavigationNotify(index:Int) {
-        self.delegate?.moveNavigationView(index: IndexPath(row: index, section: 0), vc: self.viewControllers[index])
+        self.delegate?.moveNavigationView(index: IndexPath(row: index, section: 0))
     }
 
 }
