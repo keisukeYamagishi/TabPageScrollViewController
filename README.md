@@ -49,31 +49,97 @@ $ git clone https://github.com/keisukeYamagishi/TabPageScrollViewController.git
 
 ## Sample code
 
-write in AppDelegate
+Inherit from TabPageScrollViewController
 
 ```swift4
-self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        let st = UIStoryboard.init(name: "TabPage", bundle: nil)
-        let pageView:UINavigationController = st.instantiateInitialViewController() as! UINavigationController
+//
+//  RootViewController.swift
+//  TabPageScrollViewController
+//
+//  Created by Shichimitoucarashi on 1/17/19.
+//  Copyright © 2019 Shichimitoucarashi. All rights reserved.
+//
 
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+import UIKit
+import TabPageScrollViewController
 
-        let page:TabPageViewController = pageView.topViewController as! TabPageViewController
-        page.delegate = self
-        page.tabItems = [TabItem(title: "Firsrt",vc: storyboard.instantiateViewController(withIdentifier: ViewController.identifer)),
-                         TabItem(title: "Second",vc: storyboard.instantiateViewController(withIdentifier: ViewController.identifer)),
-                         TabItem(title: "Third",vc: storyboard.instantiateViewController(withIdentifier: ViewController.identifer)),
-                         TabItem(title: "Four",vc: storyboard.instantiateViewController(withIdentifier: ViewController.identifer)),
-                         TabItem(title: "Five",vc: storyboard.instantiateViewController(withIdentifier: ViewController.identifer)),
-                         TabItem(title: "Six",vc: storyboard.instantiateViewController(withIdentifier: ViewController.identifer)),
-                         TabItem(title: "Seven",vc: storyboard.instantiateViewController(withIdentifier: ViewController.identifer)),
-                         TabItem(title: "Eight",vc: storyboard.instantiateViewController(withIdentifier: ViewController.identifer)),
-                         TabItem(title: "Nine",vc: storyboard.instantiateViewController(withIdentifier: ViewController.identifer)),
-                         TabItem(title: "Ten",vc: storyboard.instantiateViewController(withIdentifier: ViewController.identifer)),
-                         TabItem(title: "Eleven",vc: storyboard.instantiateViewController(withIdentifier: ViewController.identifer))]
-        pageView.setViewControllers([page], animated: false)
-        self.window?.rootViewController = pageView
-        self.window?.makeKeyAndVisible()
+@available(iOS 11.0, *)
+class RootViewControler:TabPageScrollViewController {
+    
+    override func viewDidLoad() {
+        
+        self.navigationController?.navigationBar.topItem?.title = "TabPage app demo"
+        
+        self.delegate = self
+        
+        let vc1:ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController
+        vc1.number = 1
+        let vc2:ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController
+        vc2.number = 2
+        let vc3:ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController
+        vc3.number = 3
+        let vc4:ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController
+        vc4.number = 4
+        let vc5:ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController
+        vc5.number = 5
+        let vc6:ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController
+        vc6.number = 6
+        let vc7:ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController
+        vc7.number = 7
+        let vc8:ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController
+        vc8.number = 8
+        let vc9:ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController
+        vc9.number = 9
+        let vc10:ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController
+        vc10.number = 10
+        let vc11:ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController
+        vc11.number = 11
+        
+        self.tabItems = [TabItem(title: "Firsrt",vc: vc1),
+                         TabItem(title: "Second",vc: vc2),
+                         TabItem(title: "Third",vc: vc3),
+                         TabItem(title: "Four",vc: vc4),
+                         TabItem(title: "Five",vc: vc5),
+                         TabItem(title: "Six",vc: vc6),
+                         TabItem(title: "Seven",vc: vc7),
+                         TabItem(title: "Eight",vc: vc8),
+                         TabItem(title: "Nine",vc: vc9),
+                         TabItem(title: "Ten",vc: vc10),
+                         TabItem(title: "Eleven",vc: vc11)]
+        
+        self.view.backgroundColor = .white
+        
+        super.viewDidLoad()
+    }
+}
+
+@available(iOS 11.0, *)
+extension RootViewControler:TabPageDelegate{
+    
+    func willScrollPage(index: Int, viewController: UIViewController) {
+        
+        let vc:ViewController = viewController as! ViewController
+        
+        print ("index: \(index) viewController: \(vc.number)")
+    }
+    
+    func didScrollPage(index: Int, viewController: UIViewController) {
+        
+        let vc:ViewController = viewController as! ViewController
+        
+        print ("index: \(index) viewController: \(vc.number)")
+    }
+    
+    
+    func tabChangeNotify(index: IndexPath, vc: UIViewController) {
+        print ("index: \(index)")
+    }
+    
+    func moveNavigationNotify(index: IndexPath) {
+        print ("index: \(index)")
+    }
+}
+
 ```
 
 so nice 😏！
