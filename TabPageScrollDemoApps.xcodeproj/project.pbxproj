@@ -22,7 +22,6 @@
 		C73E390721F1AF8A0059701A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E390421F1AF8A0059701A /* CategoryCell.swift */; };
 		C73E390821F1AF8A0059701A /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C73E390521F1AF8A0059701A /* CategoryCell.xib */; };
 		C73E390A21F1B0420059701A /* TabPageScrollViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C73E38E721F1AF390059701A /* TabPageScrollViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C73E393021F1C1C50059701A /* Pods_TabPageScrollViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ADB3DD14AABCD7C4DA5DF5D /* Pods_TabPageScrollViewController.framework */; };
 		C73F048221EB5AB200389E3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C73F048121EB5AB200389E3D /* Main.storyboard */; };
 		C73F048421EB5AFA00389E3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F048321EB5AFA00389E3D /* ViewController.swift */; };
 		C778555E21F0CC52001D542B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C778555D21F0CC52001D542B /* RootViewController.swift */; };
@@ -89,7 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C73E393021F1C1C50059701A /* Pods_TabPageScrollViewController.framework in Frameworks */,
 				A5F2FF62AF64AA4D27918481 /* Pods_TabPageScrollDemoApps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
