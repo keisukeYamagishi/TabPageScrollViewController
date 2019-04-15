@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "TabPageScrollViewController"
-  s.version      = "1.0.1"
+  s.version      = "1.1.0"
   s.summary      = "TabPageScrollViewController😱"
   s.description  = <<-DESC
                         Easy page scroll Easy build page tab view
