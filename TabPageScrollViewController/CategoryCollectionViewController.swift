@@ -11,9 +11,9 @@ import UIKit
 class CategoryCollectionViewController:UIViewController{
     
     var collectionView:UICollectionView!
-    var navigationView: UIView!
+    public var navigationView: UIView!
     public var items:[String] = []
-    private var emurate:Emurate!
+    public var emurate:Emurate!
     var observer:Observer!
     var isTapCell: Bool = false
 
