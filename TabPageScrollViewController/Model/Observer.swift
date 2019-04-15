@@ -9,30 +9,44 @@
 import Foundation
 import UIKit
 
-protocol TaObserver {
+protocol TaObserver: class {
     func navigationViewObserver(index:Int)
 }
 
-protocol TabChangeNotify {
+protocol TabChangeNotify: class {
     func changeTagNotify(index:IndexPath)
 }
 
-protocol TabPageControllerDelegate {
+protocol TabPageControllerDelegate: class {
     func willScrollPageViewController (index:Int,viewController:UIViewController)
     func didScrollPageViewController (index:Int,viewController:UIViewController)
     func tabChange(index:IndexPath, viewController:UIViewController)
     func moveNavigationView(index:IndexPath)
 }
 
+protocol PageViewObserver: class {
+    func pageBeginDraging (contentOffset: CGPoint)
+    func pageViewObserer (contentOffSet: CGPoint)
+}
+
 public class Observer {
     
     var viewControllers:[UIViewController] = []
     var selected:Int = 0
-    var navigationObserver: TaObserver?
-    var tabBarNotify:TabChangeNotify?
-    var delegate:TabPageControllerDelegate?
+    weak var navigationObserver: TaObserver?
+    weak var tabBarNotify:TabChangeNotify?
+    weak var delegate:TabPageControllerDelegate?
+    weak var scrollObserver: PageViewObserver?
     
     init(){}
+    
+    func pageScrollWillDraiging(begenPoint: CGPoint) {
+        self.scrollObserver?.pageBeginDraging(contentOffset: begenPoint)
+    }
+    
+    func pageScrollObserver (contetntOffset: CGPoint) {
+        self.scrollObserver?.pageViewObserer(contentOffSet: contetntOffset)
+    }
     
     func movePosition (index:Int) {
         self.navigationObserver?.navigationViewObserver(index: index)

@@ -12,11 +12,11 @@ class CategoryCollectionViewController:UIViewController{
     
     var collectionView:UICollectionView!
     var navigationView: UIView!
-    
     public var items:[String] = []
     private var emurate:Emurate!
     var observer:Observer!
-    
+    var isTapCell: Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +30,8 @@ class CategoryCollectionViewController:UIViewController{
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        
+        self.observer.scrollObserver = self
         
         self.setScrollView()
         
@@ -79,12 +81,14 @@ class CategoryCollectionViewController:UIViewController{
     private func moveNavigationView(index:Int) {
         let frame = self.emurate.cellFrame(index: index)
         self.collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.navigationView.frame = CGRect(x: frame.origin.x - self.collectionView.contentOffset.x,
                                                y: self.navigationView.frame.origin.y,
                                                width: frame.size.width,
                                                height: self.navigationView.frame.size.height)
-        }, completion: nil)
+        }) { [weak self] (flg) in
+            self?.isTapCell = false
+        }
     }
 }
 
@@ -123,6 +127,7 @@ extension CategoryCollectionViewController:UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.observer.tabNotify(index: indexPath)
         self.observer.selected = indexPath.row
+        self.isTapCell = true
         self.moveNavigationView(index: indexPath.row)
         self.collectionView.reloadData()
     }
@@ -158,5 +163,24 @@ extension CategoryCollectionViewController:TaObserver{
         
         self.moveNavigationView(index: self.observer.selected)
         self.collectionView.reloadData()
+    }
+}
+
+extension CategoryCollectionViewController: PageViewObserver {
+    
+    func pageBeginDraging(contentOffset: CGPoint) {}
+    
+    func pageViewObserer(contentOffSet: CGPoint) {
+        
+        guard !self.isTapCell else {
+            return
+        }
+        
+        let movedPoint = contentOffSet.x - self.view.bounds.size.width
+        
+        let scrolRate = movedPoint * (self.navigationView.frame.size.width / self.view.frame.size.width)
+        
+        let frame = self.emurate.cellFrame(index: self.observer.selected)
+        self.navigationView.frame.origin.x = scrolRate + (frame.origin.x - self.collectionView.contentOffset.x)
     }
 }

@@ -136,7 +136,7 @@ open class TabPageScrollViewController: UIViewController {
     private func setChildViewController () {
         
         self.addContainer(viewController: self.categoryViewController, containerView: self.headerView)
-        self.addContainer(viewController: self.rootPageViewController, containerView: self.pageView)
+        self.addContainer(viewController: self.rootPageViewController, containerView: self.pageView)                
     }
     
     private func addContainer (viewController:UIViewController, containerView:UIView ) {
@@ -155,6 +155,7 @@ open class TabPageScrollViewController: UIViewController {
     
     private var categoryViewController:CategoryCollectionViewController {
         let categoryViewController = CategoryCollectionViewController()
+        categoryViewController.observer = self.observer
         categoryViewController.observer = self.observer
         categoryViewController.items = self.titles
         return categoryViewController
