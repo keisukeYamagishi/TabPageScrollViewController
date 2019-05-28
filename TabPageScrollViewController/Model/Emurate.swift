@@ -8,42 +8,36 @@
 
 import UIKit
 
+struct Cell {
+    var index: Int = 0
+    var frame: CGRect = .zero
+    
+    init(frame: CGRect, index: Int) {
+        self.frame = frame
+        self.index = index
+    }
+}
+
 class Emurate {
     
-    var cells:[CategoryCell] = []
+    var cells:[Cell] = []
     var allCells: Int = 0
     
-    init(cells:[CategoryCell], cellsCount: Int) {
+    init(cellFrame: CGRect, cellsCount: Int) {
         
-        self.allCells = cellsCount
         
-        if self.allCells > cells.count {
-            
-            let frame:CGRect = cells[1].frame
-            
-            for num in 0..<self.allCells {
-                
-                let cell:CategoryCell = CategoryCell()
-                cell.tag = num
-                let f = CGRect(x: frame.origin.x * CGFloat(num),
-                               y: frame.origin.y,
-                               width: frame.size.width,
-                               height: frame.size.height)
-                cell.frame = f
-                self.cells.append(cell)
-            }            
-        }else{
-            self.cells = cells
+        for index in 0..<cellsCount {
+            self.cells.append(Cell(frame: CGRect(x: cellFrame.size.width * CGFloat(index),
+                                                 y: cellFrame.origin.y,
+                                                 width: cellFrame.size.width,
+                                                 height: cellFrame.size.height), index: index))
         }
     }
     
     func cellFrame(index:Int) -> CGRect {
-        var frame = CGRect.zero
-        for cell in self.cells {
-            if cell.tag == index {
-                frame = cell.frame
-            }
+        for cell in self.cells where cell.index == index {
+            return cell.frame
         }
-        return frame
+        return .zero
     }
 }

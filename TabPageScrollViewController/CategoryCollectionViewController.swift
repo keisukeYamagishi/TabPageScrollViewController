@@ -10,33 +10,20 @@ import UIKit
 
 class CategoryCollectionViewController:UIViewController{
     
-    var collectionView:UICollectionView!
+    var collectionView: UICollectionView!
     public var navigationView: UIView!
-    public var items:[String] = []
-    public var emurate:Emurate!
+    public var items: [String] = []
+    public var emurate: Emurate!
     var observer:Observer!
     var isTapCell: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.collectionView = self.coll
-        
-        self.navigationView = self.navi
-        
-        self.view.addSubview(self.collectionView)
-        
-        self.view.addSubview(self.navigationView)
-        
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        
-        self.observer.scrollObserver = self
-        
+        self.setNavigation()
+        self.setCollectionView()
+        self.observer.scrollObserver = self        
         self.setScrollView()
-        
         self.observer.navigationObserver = self
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,26 +31,27 @@ class CategoryCollectionViewController:UIViewController{
         self.setCellsPosition()
     }
     
-    private var coll: UICollectionView {
+    private func setCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 23), collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 23), collectionViewLayout: layout)
         collectionView.backgroundColor = .white
-        
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         
         collectionView.register(UINib(nibName: "CategoryCell", bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: "Cell")
-        return collectionView
+        self.view.addSubview(self.collectionView)
     }
     
-    private var navi: UIView {
-        let view = UIView(frame: CGRect(x: 0, y: 26, width: 124, height: 3))
-        view.backgroundColor = .black
-        return view
+    private func setNavigation() {
+        self.navigationView = UIView(frame: CGRect(x: 0, y: 26, width: 124, height: 3))
+        self.navigationView.backgroundColor = .black
+        self.view.addSubview(self.navigationView)
     }
     
     private func setScrollView (){
@@ -73,8 +61,8 @@ class CategoryCollectionViewController:UIViewController{
     }
     
     private func setCellsPosition () {
-        let cells:[CategoryCell] = self.collectionView.visibleCells as! [CategoryCell]
-        self.emurate = Emurate(cells: cells,cellsCount: self.items.count)
+        self.emurate = Emurate(cellFrame: self.collectionView.visibleCells.first!.frame,
+                               cellsCount: self.items.count)
         self.moveNavigationView(index: 0)
     }
     
