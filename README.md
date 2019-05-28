@@ -5,6 +5,10 @@
 
 ## Overview
 
+travis CI
+
+![](https://travis-ci.org/keisukeYamagishi/TabPageScrollViewController.svg?branch=master)
+
 <img src="https://github.com/keisukeYamagishi/TabPageScrollViewController/blob/master/doc/output.gif">
 
 The tab bar at the top of the screen moves synchronously with page scrolling.
