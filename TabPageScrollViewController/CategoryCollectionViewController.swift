@@ -13,9 +13,9 @@ class CategoryCollectionViewController:UIViewController{
     var collectionView: UICollectionView!
     public var navigationView: UIView!
     public var items: [String] = []
-    public var emurate: Emurate!
     var observer:Observer!
     var isTapCell: Bool = false
+    var frames: [CGRect] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,8 @@ class CategoryCollectionViewController:UIViewController{
         self.observer.scrollObserver = self        
         self.setScrollView()
         self.observer.navigationObserver = self
+        
+        self.frames = Emurate(items: self.items).frames()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,13 +63,11 @@ class CategoryCollectionViewController:UIViewController{
     }
     
     private func setCellsPosition () {
-        self.emurate = Emurate(cellFrame: self.collectionView.visibleCells.first!.frame,
-                               cellsCount: self.items.count)
         self.moveNavigationView(index: 0)
     }
-    
+
     private func moveNavigationView(index:Int) {
-        let frame = self.emurate.cellFrame(index: index)
+        let frame = self.frames[index]
         self.collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
         UIView.animate(withDuration: 0.3, animations: {
             self.navigationView.frame = CGRect(x: frame.origin.x - self.collectionView.contentOffset.x,
@@ -85,6 +85,11 @@ extension CategoryCollectionViewController:UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if !self.items.isEmpty {
+            return self.frames[indexPath.row].size
+        }
+        
         let cellSize: CGFloat = self.view.frame.size.width/5 - 1
         return CGSize(width: cellSize, height: 23)
     }
@@ -104,7 +109,7 @@ extension CategoryCollectionViewController:UICollectionViewDataSource {
         cell.tag = indexPath.row
         
         if self.observer.selected == indexPath.row {
-            cell.title.textColor = .blue
+            cell.title.textColor = UIColor(red: 69 / 255, green: 134 / 255, blue: 255 / 255, alpha: 1.0)
         }else{
             cell.title.textColor = .lightGray
         }
@@ -127,7 +132,7 @@ extension CategoryCollectionViewController: UIScrollViewDelegate {
         
         let scrollOffsetX = scrollView.contentOffset.x
         
-        let frame = self.emurate.cellFrame(index: self.observer.selected)
+        let frame = self.frames[self.observer.selected]
         self.navigationView.frame = CGRect(x: frame.origin.x,
                                            y: self.navigationView.frame.origin.y,
                                            width: frame.size.width,
@@ -168,7 +173,7 @@ extension CategoryCollectionViewController: PageViewObserver {
         
         let scrolRate = movedPoint * (self.navigationView.frame.size.width / self.view.frame.size.width)
         
-        let frame = self.emurate.cellFrame(index: self.observer.selected)
+        let frame = self.frames[self.observer.selected]
         self.navigationView.frame.origin.x = scrolRate + (frame.origin.x - self.collectionView.contentOffset.x)
     }
 }

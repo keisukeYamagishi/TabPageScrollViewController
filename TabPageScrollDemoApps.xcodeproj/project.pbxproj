@@ -25,6 +25,7 @@
 		C73F048221EB5AB200389E3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C73F048121EB5AB200389E3D /* Main.storyboard */; };
 		C73F048421EB5AFA00389E3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F048321EB5AFA00389E3D /* ViewController.swift */; };
 		C778555E21F0CC52001D542B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C778555D21F0CC52001D542B /* RootViewController.swift */; };
+		C7EB0B35229D3B9400067AD7 /* TabPageScrollDemoAppsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EB0B34229D3B9400067AD7 /* TabPageScrollDemoAppsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C73E38E621F1AF390059701A;
 			remoteInfo = TabPageScrollViewController;
+		};
+		C7EB0B37229D3B9400067AD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C70E826B21D31EA700A1CD80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C70E827221D31EA700A1CD80;
+			remoteInfo = TabPageScrollDemoApps;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -80,6 +88,9 @@
 		C73F048121EB5AB200389E3D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C73F048321EB5AFA00389E3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C778555D21F0CC52001D542B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		C7EB0B32229D3B9400067AD7 /* TabPageScrollDemoAppsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabPageScrollDemoAppsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7EB0B34229D3B9400067AD7 /* TabPageScrollDemoAppsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageScrollDemoAppsTests.swift; sourceTree = "<group>"; };
+		C7EB0B36229D3B9400067AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E73718AE401122E3E6247DC0 /* Pods_FunRecipesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunRecipesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +104,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C73E38E421F1AF390059701A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7EB0B2F229D3B9400067AD7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -130,6 +148,7 @@
 			children = (
 				C70E827521D31EA700A1CD80 /* TabPageScrollDemoApps */,
 				C73E38E821F1AF390059701A /* TabPageScrollViewController */,
+				C7EB0B33229D3B9400067AD7 /* TabPageScrollDemoAppsTests */,
 				C70E827421D31EA700A1CD80 /* Products */,
 				02BFA683F510ECFA3A0E854F /* Pods */,
 				A6F71E1A04B641C273243B8F /* Frameworks */,
@@ -141,6 +160,7 @@
 			children = (
 				C70E827321D31EA700A1CD80 /* TabPageScrollDemoApps.app */,
 				C73E38E721F1AF390059701A /* TabPageScrollViewController.framework */,
+				C7EB0B32229D3B9400067AD7 /* TabPageScrollDemoAppsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +211,15 @@
 				C73E390521F1AF8A0059701A /* CategoryCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C7EB0B33229D3B9400067AD7 /* TabPageScrollDemoAppsTests */ = {
+			isa = PBXGroup;
+			children = (
+				C7EB0B34229D3B9400067AD7 /* TabPageScrollDemoAppsTests.swift */,
+				C7EB0B36229D3B9400067AD7 /* Info.plist */,
+			);
+			path = TabPageScrollDemoAppsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +274,24 @@
 			productReference = C73E38E721F1AF390059701A /* TabPageScrollViewController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		C7EB0B31229D3B9400067AD7 /* TabPageScrollDemoAppsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7EB0B3B229D3B9400067AD7 /* Build configuration list for PBXNativeTarget "TabPageScrollDemoAppsTests" */;
+			buildPhases = (
+				C7EB0B2E229D3B9400067AD7 /* Sources */,
+				C7EB0B2F229D3B9400067AD7 /* Frameworks */,
+				C7EB0B30229D3B9400067AD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7EB0B38229D3B9400067AD7 /* PBXTargetDependency */,
+			);
+			name = TabPageScrollDemoAppsTests;
+			productName = TabPageScrollDemoAppsTests;
+			productReference = C7EB0B32229D3B9400067AD7 /* TabPageScrollDemoAppsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -252,7 +299,7 @@
 			isa = PBXProject;
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Original;
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Shichimitoucarashi;
 				TargetAttributes = {
@@ -262,6 +309,10 @@
 					C73E38E621F1AF390059701A = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
+					};
+					C7EB0B31229D3B9400067AD7 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = C70E827221D31EA700A1CD80;
 					};
 				};
 			};
@@ -280,6 +331,7 @@
 			targets = (
 				C70E827221D31EA700A1CD80 /* TabPageScrollDemoApps */,
 				C73E38E621F1AF390059701A /* TabPageScrollViewController */,
+				C7EB0B31229D3B9400067AD7 /* TabPageScrollDemoAppsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -300,6 +352,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C73E390821F1AF8A0059701A /* CategoryCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7EB0B30229D3B9400067AD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +415,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C7EB0B2E229D3B9400067AD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7EB0B35229D3B9400067AD7 /* TabPageScrollDemoAppsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -363,6 +430,11 @@
 			isa = PBXTargetDependency;
 			target = C73E38E621F1AF390059701A /* TabPageScrollViewController */;
 			targetProxy = C73E390B21F1B0420059701A /* PBXContainerItemProxy */;
+		};
+		C7EB0B38229D3B9400067AD7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C70E827221D31EA700A1CD80 /* TabPageScrollDemoApps */;
+			targetProxy = C7EB0B37229D3B9400067AD7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -597,6 +669,48 @@
 			};
 			name = Release;
 		};
+		C7EB0B39229D3B9400067AD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D3DW67HS9F;
+				INFOPLIST_FILE = TabPageScrollDemoAppsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.TabPageScrollDemoAppsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TabPageScrollDemoApps.app/TabPageScrollDemoApps";
+			};
+			name = Debug;
+		};
+		C7EB0B3A229D3B9400067AD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D3DW67HS9F;
+				INFOPLIST_FILE = TabPageScrollDemoAppsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.TabPageScrollDemoAppsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TabPageScrollDemoApps.app/TabPageScrollDemoApps";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -623,6 +737,15 @@
 			buildConfigurations = (
 				C73E38F121F1AF390059701A /* Debug */,
 				C73E38F221F1AF390059701A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7EB0B3B229D3B9400067AD7 /* Build configuration list for PBXNativeTarget "TabPageScrollDemoAppsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7EB0B39229D3B9400067AD7 /* Debug */,
+				C7EB0B3A229D3B9400067AD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

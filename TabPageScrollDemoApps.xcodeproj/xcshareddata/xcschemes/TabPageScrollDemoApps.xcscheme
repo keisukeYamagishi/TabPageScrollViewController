@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C7EB0B31229D3B9400067AD7"
+               BuildableName = "TabPageScrollDemoAppsTests.xctest"
+               BlueprintName = "TabPageScrollDemoAppsTests"
+               ReferencedContainer = "container:TabPageScrollDemoApps.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
