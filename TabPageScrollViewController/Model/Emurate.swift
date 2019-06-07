@@ -20,24 +20,26 @@ struct Cell {
 
 class Emurate {
     
-    var cells:[Cell] = []
+    var items:[String] = []
     var allCells: Int = 0
     
-    init(cellFrame: CGRect, cellsCount: Int) {
-        
-        
-        for index in 0..<cellsCount {
-            self.cells.append(Cell(frame: CGRect(x: cellFrame.size.width * CGFloat(index),
-                                                 y: cellFrame.origin.y,
-                                                 width: cellFrame.size.width,
-                                                 height: cellFrame.size.height), index: index))
-        }
+    init(items: [String]) {
+        self.items = items
     }
     
-    func cellFrame(index:Int) -> CGRect {
-        for cell in self.cells where cell.index == index {
-            return cell.frame
+    func frames(font: UIFont = UIFont.systemFont(ofSize: 20)) -> [CGRect] {
+        var totalWidth: CGFloat = 0
+        var frames: [CGRect] = []
+        for title in items {
+            
+            let label = UILabel (frame: CGRect(x: totalWidth, y: 0, width: 100, height: 38))
+            label.text = title
+            label.font = font
+            label.sizeToFit()
+            label.frame.size.width += 20
+            frames.append(label.frame)
+            totalWidth += label.frame.size.width
         }
-        return .zero
+        return frames
     }
 }

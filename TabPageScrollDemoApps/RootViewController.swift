@@ -41,17 +41,17 @@ class RootViewControler:TabPageScrollViewController {
         let vc11:ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController
         vc11.number = 11
         
-        self.tabItems = [TabItem(title: "Firsrt",vc: vc1),
-                         TabItem(title: "Second",vc: vc2),
-                         TabItem(title: "Third",vc: vc3),
-                         TabItem(title: "Four",vc: vc4),
-                         TabItem(title: "Five",vc: vc5),
-                         TabItem(title: "Six",vc: vc6),
-                         TabItem(title: "Seven",vc: vc7),
-                         TabItem(title: "Eight",vc: vc8),
-                         TabItem(title: "Nine",vc: vc9),
-                         TabItem(title: "Ten",vc: vc10),
-                         TabItem(title: "Eleven",vc: vc11)]
+        self.tabItems = [TabItem(title: "devxoul/SwiftUITodo",vc: vc1),
+                         TabItem(title: "CocoaPods/CocoaPods",vc: vc2),
+                         TabItem(title: "rxswiftcommunity.github.io",vc: vc3),
+                         TabItem(title: "contributors",vc: vc4),
+                         TabItem(title: "Kingfisher",vc: vc5),
+                         TabItem(title: "RxAlert",vc: vc6),
+                         TabItem(title: "tesseract",vc: vc7),
+                         TabItem(title: "CHIPageControl",vc: vc8),
+                         TabItem(title: "AudioKit",vc: vc9),
+                         TabItem(title: "react-native",vc: vc10),
+                         TabItem(title: "xsort",vc: vc11)]
         
         self.view.backgroundColor = .white
         
