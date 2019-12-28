@@ -10,7 +10,7 @@ import UIKit
 import TabPageScrollViewController
 
 @available(iOS 11.0, *)
-class RootViewControler:TabPageScrollViewController {
+final class RootViewControler: TabPageScrollViewController {
     
     override func viewDidLoad() {
         
@@ -60,7 +60,7 @@ class RootViewControler:TabPageScrollViewController {
 }
 
 @available(iOS 11.0, *)
-extension RootViewControler:TabPageDelegate{
+extension RootViewControler: TabPageDelegate{
     
     func willScrollPage(index: Int, viewController: UIViewController) {
         
@@ -75,8 +75,7 @@ extension RootViewControler:TabPageDelegate{
         
         print ("index: \(index) viewController: \(vc.number)")
     }
-    
-    
+
     func tabChangeNotify(index: IndexPath, vc: UIViewController) {
         print ("index: \(index)")
     }

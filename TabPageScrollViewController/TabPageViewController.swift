@@ -9,28 +9,24 @@
 import UIKit
 
 public protocol TabPageDelegate {
-    func willScrollPage(index:Int,viewController:UIViewController)
-    func didScrollPage(index:Int,viewController:UIViewController)
-    func tabChangeNotify(index:IndexPath, vc:UIViewController)
-    func moveNavigationNotify(index:IndexPath)
+    func willScrollPage(index: Int,viewController: UIViewController)
+    func didScrollPage(index: Int,viewController: UIViewController)
+    func tabChangeNotify(index: IndexPath, vc: UIViewController)
+    func moveNavigationNotify(index: IndexPath)
 }
 
 @available(iOS 11.0, *)
 open class TabPageScrollViewController: UIViewController {
     
-    var headerView:UIView!
-    var pageView:UIView!
-    
-    public var tabItems:[TabItem] = []
-    
-    public var delegate:TabPageDelegate?
-    
-    public var observer:Observer = Observer()
-    
-    private var barItem:UIBarButtonItem!
+    public var tabItems: [TabItem] = []
+    public var delegate: TabPageDelegate?
+    public var observer: TabPageObserver = TabPageObserver()
+    var headerView: UIView!
+    var pageView: UIView!
+    private var barItem: UIBarButtonItem!
     private var isUp = false
-    private var titles:[String] = []
-    private var vcs:[UIViewController] = []
+    private var titles: [String] = []
+    private var vcs: [UIViewController] = []
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -139,21 +135,21 @@ open class TabPageScrollViewController: UIViewController {
         self.addContainer(viewController: self.rootPageViewController, containerView: self.pageView)                
     }
     
-    private func addContainer (viewController:UIViewController, containerView:UIView ) {
+    private func addContainer (viewController: UIViewController, containerView: UIView) {
         self.addChild(viewController)
         viewController.view.frame = containerView.frame
         viewController.view.frame = CGRect(x: 0, y: 0, width: viewController.view.frame.size.width, height: viewController.view.frame.size.height)
         containerView.addSubview(viewController.view)
         viewController.didMove(toParent: self)
     }
-    private var rootPageViewController:PageViewController {
+    private var rootPageViewController: PageViewController {
         let rootPageViewController = PageViewController()
         rootPageViewController.observer = self.observer
         rootPageViewController.vcs = self.vcs
         return rootPageViewController
     }
     
-    private var categoryViewController:CategoryCollectionViewController {
+    private var categoryViewController: CategoryCollectionViewController {
         let categoryViewController = CategoryCollectionViewController()
         categoryViewController.observer = self.observer
         categoryViewController.observer = self.observer
