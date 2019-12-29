@@ -13,7 +13,7 @@ class CategoryCollectionViewController:UIViewController{
     var collectionView: UICollectionView!
     public var navigationView: UIView!
     public var items: [String] = []
-    var observer:Observer!
+    var observer: Observer!
     var isTapCell: Bool = false
     var frames: [CGRect] = []
 
