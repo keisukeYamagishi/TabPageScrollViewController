@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A5F2FF62AF64AA4D27918481 /* Pods_TabPageScrollDemoApps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DEF8C78AE2DCBA2D5E35FE /* Pods_TabPageScrollDemoApps.framework */; };
 		C70E827721D31EA700A1CD80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E827621D31EA700A1CD80 /* AppDelegate.swift */; };
 		C70E827E21D31EA900A1CD80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70E827D21D31EA900A1CD80 /* Assets.xcassets */; };
 		C70E828121D31EA900A1CD80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70E827F21D31EA900A1CD80 /* LaunchScreen.storyboard */; };
-		C73E38EB21F1AF390059701A /* TabPageScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C73E38E921F1AF390059701A /* TabPageScrollViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C73E38F621F1AF7A0059701A /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E38F421F1AF7A0059701A /* CategoryCollectionViewController.swift */; };
-		C73E38FD21F1AF820059701A /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E38F821F1AF820059701A /* Observer.swift */; };
-		C73E38FE21F1AF820059701A /* Emurate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E38F921F1AF820059701A /* Emurate.swift */; };
-		C73E38FF21F1AF820059701A /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E38FA21F1AF820059701A /* PageModel.swift */; };
-		C73E390021F1AF820059701A /* Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E38FB21F1AF820059701A /* Filtering.swift */; };
-		C73E390121F1AF820059701A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E38FC21F1AF820059701A /* PageViewController.swift */; };
-		C73E390621F1AF8A0059701A /* TabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E390221F1AF8A0059701A /* TabPageViewController.swift */; };
-		C73E390721F1AF8A0059701A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E390421F1AF8A0059701A /* CategoryCell.swift */; };
-		C73E390821F1AF8A0059701A /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C73E390521F1AF8A0059701A /* CategoryCell.xib */; };
+		C737707423B85D30005B46A4 /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706423B85D2F005B46A4 /* CategoryCollectionViewController.swift */; };
+		C737707623B85D30005B46A4 /* Emurate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706723B85D2F005B46A4 /* Emurate.swift */; };
+		C737707723B85D30005B46A4 /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706823B85D2F005B46A4 /* PageModel.swift */; };
+		C737707823B85D30005B46A4 /* Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706923B85D2F005B46A4 /* Filtering.swift */; };
+		C737707923B85D30005B46A4 /* TabPageObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706A23B85D2F005B46A4 /* TabPageObserver.swift */; };
+		C737707A23B85D30005B46A4 /* TabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706B23B85D30005B46A4 /* TabPageViewController.swift */; };
+		C737707B23B85D30005B46A4 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706D23B85D30005B46A4 /* CategoryCell.swift */; };
+		C737707C23B85D30005B46A4 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C737706E23B85D30005B46A4 /* CategoryCell.xib */; };
+		C737707D23B85D30005B46A4 /* TabPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706F23B85D30005B46A4 /* TabPageCell.swift */; };
+		C737708023B85D30005B46A4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737707223B85D30005B46A4 /* PageViewController.swift */; };
+		C737708323B86232005B46A4 /* TabPageScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C737707023B85D30005B46A4 /* TabPageScrollViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C73E390A21F1B0420059701A /* TabPageScrollViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C73E38E721F1AF390059701A /* TabPageScrollViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C73F048221EB5AB200389E3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C73F048121EB5AB200389E3D /* Main.storyboard */; };
 		C73F048421EB5AFA00389E3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F048321EB5AFA00389E3D /* ViewController.swift */; };
@@ -60,38 +60,30 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1CA6D9E54AF22012A046688F /* Pods_FunRecipesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunRecipesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		51DEF8C78AE2DCBA2D5E35FE /* Pods_TabPageScrollDemoApps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabPageScrollDemoApps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5ADB3DD14AABCD7C4DA5DF5D /* Pods_TabPageScrollViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabPageScrollViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		80281161B4B05EF3198FFDE1 /* Pods-TabPageScrollDemoApps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabPageScrollDemoApps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TabPageScrollDemoApps/Pods-TabPageScrollDemoApps.debug.xcconfig"; sourceTree = "<group>"; };
-		87494C660C8B231697113F32 /* Pods-TabPageScrollDemoApps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabPageScrollDemoApps.release.xcconfig"; path = "Pods/Target Support Files/Pods-TabPageScrollDemoApps/Pods-TabPageScrollDemoApps.release.xcconfig"; sourceTree = "<group>"; };
-		AF8D37733165B7213019B8EB /* Pods_FunRecipes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunRecipes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1E4FEC331BAADB9D54B2856 /* Pods_TabPageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabPageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70E827321D31EA700A1CD80 /* TabPageScrollDemoApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabPageScrollDemoApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70E827621D31EA700A1CD80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70E827D21D31EA900A1CD80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C70E828021D31EA900A1CD80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C70E828221D31EA900A1CD80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C73E38C621F1AB040059701A /* TabPageScrollViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TabPageScrollViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C737706423B85D2F005B46A4 /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		C737706723B85D2F005B46A4 /* Emurate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emurate.swift; sourceTree = "<group>"; };
+		C737706823B85D2F005B46A4 /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
+		C737706923B85D2F005B46A4 /* Filtering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtering.swift; sourceTree = "<group>"; };
+		C737706A23B85D2F005B46A4 /* TabPageObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageObserver.swift; sourceTree = "<group>"; };
+		C737706B23B85D30005B46A4 /* TabPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageViewController.swift; sourceTree = "<group>"; };
+		C737706D23B85D30005B46A4 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		C737706E23B85D30005B46A4 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		C737706F23B85D30005B46A4 /* TabPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageCell.swift; sourceTree = "<group>"; };
+		C737707023B85D30005B46A4 /* TabPageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabPageScrollViewController.h; sourceTree = "<group>"; };
+		C737707223B85D30005B46A4 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		C737707323B85D30005B46A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C73E38E721F1AF390059701A /* TabPageScrollViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TabPageScrollViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C73E38E921F1AF390059701A /* TabPageScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabPageScrollViewController.h; sourceTree = "<group>"; };
-		C73E38EA21F1AF390059701A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C73E38F421F1AF7A0059701A /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
-		C73E38F821F1AF820059701A /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
-		C73E38F921F1AF820059701A /* Emurate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emurate.swift; sourceTree = "<group>"; };
-		C73E38FA21F1AF820059701A /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
-		C73E38FB21F1AF820059701A /* Filtering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtering.swift; sourceTree = "<group>"; };
-		C73E38FC21F1AF820059701A /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		C73E390221F1AF8A0059701A /* TabPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageViewController.swift; sourceTree = "<group>"; };
-		C73E390421F1AF8A0059701A /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		C73E390521F1AF8A0059701A /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		C73F048121EB5AB200389E3D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C73F048321EB5AFA00389E3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C778555D21F0CC52001D542B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C7EB0B32229D3B9400067AD7 /* TabPageScrollDemoAppsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabPageScrollDemoAppsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7EB0B34229D3B9400067AD7 /* TabPageScrollDemoAppsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageScrollDemoAppsTests.swift; sourceTree = "<group>"; };
 		C7EB0B36229D3B9400067AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E73718AE401122E3E6247DC0 /* Pods_FunRecipesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunRecipesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5F2FF62AF64AA4D27918481 /* Pods_TabPageScrollDemoApps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,25 +111,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02BFA683F510ECFA3A0E854F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				80281161B4B05EF3198FFDE1 /* Pods-TabPageScrollDemoApps.debug.xcconfig */,
-				87494C660C8B231697113F32 /* Pods-TabPageScrollDemoApps.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		A6F71E1A04B641C273243B8F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C73E38C621F1AB040059701A /* TabPageScrollViewController.framework */,
-				AF8D37733165B7213019B8EB /* Pods_FunRecipes.framework */,
-				E73718AE401122E3E6247DC0 /* Pods_FunRecipesTests.framework */,
-				1CA6D9E54AF22012A046688F /* Pods_FunRecipesUITests.framework */,
-				C1E4FEC331BAADB9D54B2856 /* Pods_TabPageViewController.framework */,
-				5ADB3DD14AABCD7C4DA5DF5D /* Pods_TabPageScrollViewController.framework */,
-				51DEF8C78AE2DCBA2D5E35FE /* Pods_TabPageScrollDemoApps.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -150,7 +125,6 @@
 				C73E38E821F1AF390059701A /* TabPageScrollViewController */,
 				C7EB0B33229D3B9400067AD7 /* TabPageScrollDemoAppsTests */,
 				C70E827421D31EA700A1CD80 /* Products */,
-				02BFA683F510ECFA3A0E854F /* Pods */,
 				A6F71E1A04B641C273243B8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -179,38 +153,39 @@
 			path = TabPageScrollDemoApps;
 			sourceTree = "<group>";
 		};
-		C73E38E821F1AF390059701A /* TabPageScrollViewController */ = {
+		C737706523B85D2F005B46A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C73E390221F1AF8A0059701A /* TabPageViewController.swift */,
-				C73E390321F1AF8A0059701A /* View */,
-				C73E38F421F1AF7A0059701A /* CategoryCollectionViewController.swift */,
-				C73E38F721F1AF820059701A /* Model */,
-				C73E38FC21F1AF820059701A /* PageViewController.swift */,
-				C73E38E921F1AF390059701A /* TabPageScrollViewController.h */,
-				C73E38EA21F1AF390059701A /* Info.plist */,
-			);
-			path = TabPageScrollViewController;
-			sourceTree = "<group>";
-		};
-		C73E38F721F1AF820059701A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C73E38F821F1AF820059701A /* Observer.swift */,
-				C73E38F921F1AF820059701A /* Emurate.swift */,
-				C73E38FA21F1AF820059701A /* PageModel.swift */,
-				C73E38FB21F1AF820059701A /* Filtering.swift */,
+				C737706723B85D2F005B46A4 /* Emurate.swift */,
+				C737706823B85D2F005B46A4 /* PageModel.swift */,
+				C737706923B85D2F005B46A4 /* Filtering.swift */,
+				C737706A23B85D2F005B46A4 /* TabPageObserver.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		C73E390321F1AF8A0059701A /* View */ = {
+		C737706C23B85D30005B46A4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C73E390421F1AF8A0059701A /* CategoryCell.swift */,
-				C73E390521F1AF8A0059701A /* CategoryCell.xib */,
+				C737706D23B85D30005B46A4 /* CategoryCell.swift */,
+				C737706E23B85D30005B46A4 /* CategoryCell.xib */,
+				C737706F23B85D30005B46A4 /* TabPageCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C73E38E821F1AF390059701A /* TabPageScrollViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C737706423B85D2F005B46A4 /* CategoryCollectionViewController.swift */,
+				C737707323B85D30005B46A4 /* Info.plist */,
+				C737706523B85D2F005B46A4 /* Model */,
+				C737707223B85D30005B46A4 /* PageViewController.swift */,
+				C737707023B85D30005B46A4 /* TabPageScrollViewController.h */,
+				C737706B23B85D30005B46A4 /* TabPageViewController.swift */,
+				C737706C23B85D30005B46A4 /* View */,
+			);
+			path = TabPageScrollViewController;
 			sourceTree = "<group>";
 		};
 		C7EB0B33229D3B9400067AD7 /* TabPageScrollDemoAppsTests */ = {
@@ -229,7 +204,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C73E38EB21F1AF390059701A /* TabPageScrollViewController.h in Headers */,
+				C737708323B86232005B46A4 /* TabPageScrollViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +215,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C70E829B21D31EA900A1CD80 /* Build configuration list for PBXNativeTarget "TabPageScrollDemoApps" */;
 			buildPhases = (
-				C5044B303D97FA438DE0236F /* [CP] Check Pods Manifest.lock */,
 				C70E826F21D31EA700A1CD80 /* Sources */,
 				C70E827021D31EA700A1CD80 /* Frameworks */,
 				C70E827121D31EA700A1CD80 /* Resources */,
@@ -300,7 +274,7 @@
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = Shichimitoucarashi;
 				TargetAttributes = {
 					C70E827221D31EA700A1CD80 = {
@@ -308,7 +282,7 @@
 					};
 					C73E38E621F1AF390059701A = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1120;
 					};
 					C7EB0B31229D3B9400067AD7 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -351,7 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C73E390821F1AF8A0059701A /* CategoryCell.xib in Resources */,
+				C737707C23B85D30005B46A4 /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,31 +337,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C5044B303D97FA438DE0236F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TabPageScrollDemoApps-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C70E826F21D31EA700A1CD80 /* Sources */ = {
@@ -404,14 +353,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C73E38F621F1AF7A0059701A /* CategoryCollectionViewController.swift in Sources */,
-				C73E390621F1AF8A0059701A /* TabPageViewController.swift in Sources */,
-				C73E390121F1AF820059701A /* PageViewController.swift in Sources */,
-				C73E38FF21F1AF820059701A /* PageModel.swift in Sources */,
-				C73E38FD21F1AF820059701A /* Observer.swift in Sources */,
-				C73E390721F1AF8A0059701A /* CategoryCell.swift in Sources */,
-				C73E390021F1AF820059701A /* Filtering.swift in Sources */,
-				C73E38FE21F1AF820059701A /* Emurate.swift in Sources */,
+				C737707723B85D30005B46A4 /* PageModel.swift in Sources */,
+				C737708023B85D30005B46A4 /* PageViewController.swift in Sources */,
+				C737707D23B85D30005B46A4 /* TabPageCell.swift in Sources */,
+				C737707423B85D30005B46A4 /* CategoryCollectionViewController.swift in Sources */,
+				C737707923B85D30005B46A4 /* TabPageObserver.swift in Sources */,
+				C737707B23B85D30005B46A4 /* CategoryCell.swift in Sources */,
+				C737707623B85D30005B46A4 /* Emurate.swift in Sources */,
+				C737707A23B85D30005B46A4 /* TabPageViewController.swift in Sources */,
+				C737707823B85D30005B46A4 /* Filtering.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,7 +518,6 @@
 		};
 		C70E829C21D31EA900A1CD80 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80281161B4B05EF3198FFDE1 /* Pods-TabPageScrollDemoApps.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -589,7 +538,6 @@
 		};
 		C70E829D21D31EA900A1CD80 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87494C660C8B231697113F32 /* Pods-TabPageScrollDemoApps.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -632,7 +580,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -662,7 +610,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.TabPageScrollViewController;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

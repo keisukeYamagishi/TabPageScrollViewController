@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol TaObserver: class {
+protocol TabObserver: class {
     func navigationViewObserver(index:Int)
 }
 
@@ -33,7 +33,7 @@ public class TabPageObserver {
     
     var viewControllers:[UIViewController] = []
     var selected:Int = 0
-    weak var navigationObserver: TaObserver?
+    weak var navigationObserver: TabObserver?
     weak var tabBarNotify:TabChangeNotify?
     weak var delegate:TabPageControllerDelegate?
     weak var scrollObserver: PageViewObserver?

@@ -9,18 +9,14 @@
 import UIKit
 //import SHColor
 
-class ViewController:UIViewController{
+final class ViewController: UIViewController{
     
     static let identifer = "ViewController"
        
     @IBOutlet weak var label: UILabel!
     
     var number: Int = 0
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -28,7 +24,8 @@ class ViewController:UIViewController{
         
         self.view.backgroundColor = self.color(num: self.number)
     }
-    private func color (num:Int) -> UIColor {
+
+    private func color (num: Int) -> UIColor {
 
         switch num {
         case 0:
