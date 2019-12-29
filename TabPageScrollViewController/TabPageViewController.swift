@@ -9,28 +9,24 @@
 import UIKit
 
 public protocol TabPageDelegate {
-    func willScrollPage(index:Int,viewController:UIViewController)
-    func didScrollPage(index:Int,viewController:UIViewController)
-    func tabChangeNotify(index:IndexPath, vc:UIViewController)
-    func moveNavigationNotify(index:IndexPath)
+    func willScrollPage(index: Int,viewController: UIViewController)
+    func didScrollPage(index: Int,viewController: UIViewController)
+    func tabChangeNotify(index: IndexPath, vc: UIViewController)
+    func moveNavigationNotify(index: IndexPath)
 }
 
 @available(iOS 11.0, *)
 open class TabPageScrollViewController: UIViewController {
     
-    var headerView:UIView!
-    var pageView:UIView!
-    
-    public var tabItems:[TabItem] = []
-    
-    public var delegate:TabPageDelegate?
-    
-    public var observer:Observer = Observer()
-    
-    private var barItem:UIBarButtonItem!
+    public var tabItems: [TabItem] = []
+    public var delegate: TabPageDelegate?
+    public var observer: TabPageObserver = TabPageObserver()
+    var headerView: UIView!
+    var pageView: UIView!
+    private var barItem: UIBarButtonItem!
     private var isUp = false
-    private var titles:[String] = []
-    private var vcs:[UIViewController] = []
+    private var titles: [String] = []
+    private var vcs: [UIViewController] = []
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +60,7 @@ open class TabPageScrollViewController: UIViewController {
         self.headerView.translatesAutoresizingMaskIntoConstraints = false
         self.pageView.translatesAutoresizingMaskIntoConstraints = false
         
-        let top = NSLayoutConstraint(item: self.headerView,
+        let top = NSLayoutConstraint(item: self.headerView as Any,
                                      attribute: .top,
                                      relatedBy: .equal,
                                      toItem: self.view.safeAreaLayoutGuide,
@@ -72,7 +68,7 @@ open class TabPageScrollViewController: UIViewController {
                                      multiplier:1.0,
                                      constant: 0)
         
-        let left = NSLayoutConstraint(item: self.headerView,
+        let left = NSLayoutConstraint(item: self.headerView as Any,
                                       attribute: .leading,
                                       relatedBy: .equal,
                                       toItem: self.view.safeAreaLayoutGuide,
@@ -80,7 +76,7 @@ open class TabPageScrollViewController: UIViewController {
                                       multiplier: 1.0,
                                       constant: 0.0)
         
-        let right = NSLayoutConstraint(item: self.headerView,
+        let right = NSLayoutConstraint(item: self.headerView as Any,
                                        attribute: .trailing,
                                        relatedBy: .equal,
                                        toItem: self.view.safeAreaLayoutGuide,
@@ -88,7 +84,7 @@ open class TabPageScrollViewController: UIViewController {
                                        multiplier: 1.0,
                                        constant: 0.0)
         
-        let height = NSLayoutConstraint(item: self.headerView,
+        let height = NSLayoutConstraint(item: self.headerView as Any,
                                         attribute: .height,
                                         relatedBy: .equal,
                                         toItem: nil,
@@ -98,7 +94,7 @@ open class TabPageScrollViewController: UIViewController {
         
         self.view.addConstraints([top,left,right,height])
         
-        let topPage = NSLayoutConstraint(item: self.pageView,
+        let topPage = NSLayoutConstraint(item: self.pageView as Any,
                                          attribute: .top,
                                          relatedBy: .equal,
                                          toItem: self.headerView,
@@ -106,7 +102,7 @@ open class TabPageScrollViewController: UIViewController {
                                          multiplier:1.0,
                                          constant: 0.0)
         
-        let leftPage = NSLayoutConstraint(item: self.pageView,
+        let leftPage = NSLayoutConstraint(item: self.pageView as Any,
                                           attribute: .leading,
                                           relatedBy: .equal,
                                           toItem: self.view.safeAreaLayoutGuide,
@@ -114,7 +110,7 @@ open class TabPageScrollViewController: UIViewController {
                                           multiplier: 1.0,
                                           constant: 0.0)
         
-        let rightPage = NSLayoutConstraint(item: self.pageView,
+        let rightPage = NSLayoutConstraint(item: self.pageView as Any,
                                            attribute: .trailing,
                                            relatedBy: .equal,
                                            toItem: self.view.safeAreaLayoutGuide,
@@ -122,7 +118,7 @@ open class TabPageScrollViewController: UIViewController {
                                            multiplier: 1.0,
                                            constant: 0.0)
         
-        let bottomPage = NSLayoutConstraint(item: self.pageView,
+        let bottomPage = NSLayoutConstraint(item: self.pageView as Any,
                                             attribute: .bottom,
                                             relatedBy: .equal,
                                             toItem: self.view.safeAreaLayoutGuide,
@@ -139,21 +135,21 @@ open class TabPageScrollViewController: UIViewController {
         self.addContainer(viewController: self.rootPageViewController, containerView: self.pageView)                
     }
     
-    private func addContainer (viewController:UIViewController, containerView:UIView ) {
+    private func addContainer (viewController: UIViewController, containerView: UIView) {
         self.addChild(viewController)
         viewController.view.frame = containerView.frame
         viewController.view.frame = CGRect(x: 0, y: 0, width: viewController.view.frame.size.width, height: viewController.view.frame.size.height)
         containerView.addSubview(viewController.view)
         viewController.didMove(toParent: self)
     }
-    private var rootPageViewController:PageViewController {
+    private var rootPageViewController: PageViewController {
         let rootPageViewController = PageViewController()
         rootPageViewController.observer = self.observer
         rootPageViewController.vcs = self.vcs
         return rootPageViewController
     }
     
-    private var categoryViewController:CategoryCollectionViewController {
+    private var categoryViewController: CategoryCollectionViewController {
         let categoryViewController = CategoryCollectionViewController()
         categoryViewController.observer = self.observer
         categoryViewController.observer = self.observer

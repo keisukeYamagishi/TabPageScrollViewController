@@ -8,23 +8,24 @@
 
 import UIKit
 
-class PageViewController:UIPageViewController {
+class PageViewController: UIPageViewController {
     
-    var vcs:[UIViewController] = []
-    var observer:Observer!
+    var vcs: [UIViewController] = []
+    var observer: TabPageObserver!
     
     var currentIndex: Int? {
         guard let viewController = viewControllers?.first else {
             return nil
         }
-        return self.vcs.map{ $0 }.index(of: viewController)
+        return self.vcs.map{ $0 }.firstIndex(of: viewController)
     }
     
     var beforeIndex:Int = 0
     
-    override init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]? = nil) {
+    override init(transitionStyle style: UIPageViewController.TransitionStyle,
+                  navigationOrientation: UIPageViewController.NavigationOrientation,
+                  options: [UIPageViewController.OptionsKey : Any]? = nil) {
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: [:])
-        
     }
     
     required init?(coder: NSCoder) {
@@ -57,9 +58,9 @@ class PageViewController:UIPageViewController {
 extension PageViewController : UIPageViewControllerDataSource {
     
     
-    func pageViewController(viewController:UIViewController, isAfter:Bool) -> UIViewController? {
+    func pageViewController(viewController: UIViewController, isAfter: Bool) -> UIViewController? {
         
-        guard var index = self.vcs.map({$0}).index(of: viewController) else {
+        guard var index = self.vcs.map({$0}).firstIndex(of: viewController) else {
             return nil
         }
         
@@ -117,7 +118,7 @@ extension PageViewController: UIScrollViewDelegate {
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {}
 }
 
-extension PageViewController:TabChangeNotify{
+extension PageViewController: TabChangeNotify{
     
     func changeTagNotify(index: IndexPath) {
         if index.row != self.observer.selected {

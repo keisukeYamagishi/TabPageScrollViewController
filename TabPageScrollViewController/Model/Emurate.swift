@@ -20,7 +20,7 @@ struct Cell {
 
 class Emurate {
     
-    var items:[String] = []
+    var items: [String] = []
     var allCells: Int = 0
     
     init(items: [String]) {

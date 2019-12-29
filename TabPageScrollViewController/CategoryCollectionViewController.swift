@@ -8,12 +8,12 @@
 
 import UIKit
 
-class CategoryCollectionViewController:UIViewController{
+class CategoryCollectionViewController: UIViewController{
     
     var collectionView: UICollectionView!
     public var navigationView: UIView!
     public var items: [String] = []
-    var observer: Observer!
+    var observer: TabPageObserver!
     var isTapCell: Bool = false
     var frames: [CGRect] = []
 
@@ -66,7 +66,7 @@ class CategoryCollectionViewController:UIViewController{
         self.moveNavigationView(index: 0)
     }
 
-    private func moveNavigationView(index:Int) {
+    private func moveNavigationView(index: Int) {
         let frame = self.frames[index]
         self.collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
         UIView.animate(withDuration: 0.3, animations: {
@@ -80,7 +80,7 @@ class CategoryCollectionViewController:UIViewController{
     }
 }
 
-extension CategoryCollectionViewController:UICollectionViewDelegateFlowLayout {
+extension CategoryCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -95,7 +95,7 @@ extension CategoryCollectionViewController:UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension CategoryCollectionViewController:UICollectionViewDataSource {
+extension CategoryCollectionViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.items.count
@@ -142,7 +142,7 @@ extension CategoryCollectionViewController: UIScrollViewDelegate {
     }
 }
 
-extension CategoryCollectionViewController:TaObserver{
+extension CategoryCollectionViewController: TabObserver{
     func navigationViewObserver(index: Int) {
         self.observer.selected = index
         

@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.author             = { "keisuke" => "jam330157@gmail.com" }
   s.source       = { :git => "https://github.com/keisukeYamagishi/TabPageScrollViewController.git", :tag => "#{s.version}" }
   s.ios.deployment_target = '11.0'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   s.source_files  = "TabPageScrollViewController", "TabPageScrollViewController/**/*.swift"
   s.resource = 'TabPageScrollViewController/**/*.{xib,storyboard}'
 end
