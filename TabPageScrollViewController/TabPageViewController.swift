@@ -54,79 +54,9 @@ open class TabPageScrollViewController: UIViewController {
     }
     
     override open func viewWillLayoutSubviews() {
-        
         super.viewWillLayoutSubviews()
-        
-        self.headerView.translatesAutoresizingMaskIntoConstraints = false
-        self.pageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let top = NSLayoutConstraint(item: self.headerView as Any,
-                                     attribute: .top,
-                                     relatedBy: .equal,
-                                     toItem: self.view.safeAreaLayoutGuide,
-                                     attribute: .top,
-                                     multiplier:1.0,
-                                     constant: 0)
-        
-        let left = NSLayoutConstraint(item: self.headerView as Any,
-                                      attribute: .leading,
-                                      relatedBy: .equal,
-                                      toItem: self.view.safeAreaLayoutGuide,
-                                      attribute: .leading,
-                                      multiplier: 1.0,
-                                      constant: 0.0)
-        
-        let right = NSLayoutConstraint(item: self.headerView as Any,
-                                       attribute: .trailing,
-                                       relatedBy: .equal,
-                                       toItem: self.view.safeAreaLayoutGuide,
-                                       attribute: .trailing,
-                                       multiplier: 1.0,
-                                       constant: 0.0)
-        
-        let height = NSLayoutConstraint(item: self.headerView as Any,
-                                        attribute: .height,
-                                        relatedBy: .equal,
-                                        toItem: nil,
-                                        attribute: .height,
-                                        multiplier: 1.0,
-                                        constant: 30.0)
-        
-        self.view.addConstraints([top,left,right,height])
-        
-        let topPage = NSLayoutConstraint(item: self.pageView as Any,
-                                         attribute: .top,
-                                         relatedBy: .equal,
-                                         toItem: self.headerView,
-                                         attribute: .bottom,
-                                         multiplier:1.0,
-                                         constant: 0.0)
-        
-        let leftPage = NSLayoutConstraint(item: self.pageView as Any,
-                                          attribute: .leading,
-                                          relatedBy: .equal,
-                                          toItem: self.view.safeAreaLayoutGuide,
-                                          attribute: .leading,
-                                          multiplier: 1.0,
-                                          constant: 0.0)
-        
-        let rightPage = NSLayoutConstraint(item: self.pageView as Any,
-                                           attribute: .trailing,
-                                           relatedBy: .equal,
-                                           toItem: self.view.safeAreaLayoutGuide,
-                                           attribute: .trailing,
-                                           multiplier: 1.0,
-                                           constant: 0.0)
-        
-        let bottomPage = NSLayoutConstraint(item: self.pageView as Any,
-                                            attribute: .bottom,
-                                            relatedBy: .equal,
-                                            toItem: self.view.safeAreaLayoutGuide,
-                                            attribute: .bottom,
-                                            multiplier: 1.0,
-                                            constant: 0.0)
-        
-        self.view.addConstraints([topPage,leftPage,rightPage,bottomPage])
+        self.headerView.frame.origin.y = self.view.safeAreaInsets.top
+        self.pageView.frame.origin.y = self.headerView.frame.origin.y + self.headerView.frame.size.height
     }
     
     private func setChildViewController () {
@@ -155,20 +85,6 @@ open class TabPageScrollViewController: UIViewController {
         categoryViewController.observer = self.observer
         categoryViewController.items = self.titles
         return categoryViewController
-    }
-    
-    func setAutoLayout(v: UIView) {
-        let bindings = ["view": v]
-        view.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|[view]|",
-            options:NSLayoutConstraint.FormatOptions(rawValue: 0),
-            metrics:nil,
-            views: bindings))
-        view.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|[view]|",
-            options:NSLayoutConstraint.FormatOptions(rawValue: 0),
-            metrics:nil,
-            views: bindings))
     }
 }
 
