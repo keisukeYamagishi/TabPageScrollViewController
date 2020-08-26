@@ -35,7 +35,7 @@ open class TabPageScrollViewController: UIViewController {
         headerView = UIView(frame: CGRect(x: 0,
                                           y: 0,
                                           width: view.frame.size.width,
-                                          height: 50))
+                                          height: 32))
 
         pageView = UIView(frame: CGRect(x: 0,
                                         y: 0,
