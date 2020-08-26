@@ -14,6 +14,6 @@ public struct TabItem {
     public var viewController: UIViewController!
     public init(title: String, vc: UIViewController) {
         self.title = title
-        self.viewController = vc
+        viewController = vc
     }
 }

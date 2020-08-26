@@ -10,18 +10,17 @@ import Foundation
 import UIKit
 
 class Filtering {
-    
     public var viewControllers: [UIViewController] = []
     public var titles: [String] = []
-    
+
     init(items: [TabItem]) {
-        self.split(items: items)
+        split(items: items)
     }
-    
-    func split (items: [TabItem]) {
+
+    func split(items: [TabItem]) {
         for item in items {
-            self.viewControllers.append(item.viewController)
-            self.titles.append(item.title)
+            viewControllers.append(item.viewController)
+            titles.append(item.title)
         }
-    }    
+    }
 }
