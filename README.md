@@ -7,7 +7,7 @@
 
 travis CI
 
-![](https://travis-ci.org/keisukeYamagishi/TabPageScrollViewController.svg?branch=master)
+[![Build Status](https://travis-ci.org/keisukeYamagishi/TabPageScrollViewController.svg?branch=master)](https://travis-ci.org/keisukeYamagishi/TabPageScrollViewController)
 
 <img src="https://github.com/keisukeYamagishi/TabPageScrollViewController/blob/master/doc/output.gif">
 
