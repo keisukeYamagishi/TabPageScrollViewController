@@ -18,7 +18,6 @@
 		C737707A23B85D30005B46A4 /* TabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706B23B85D30005B46A4 /* TabPageViewController.swift */; };
 		C737707B23B85D30005B46A4 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706D23B85D30005B46A4 /* CategoryCell.swift */; };
 		C737707C23B85D30005B46A4 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C737706E23B85D30005B46A4 /* CategoryCell.xib */; };
-		C737707D23B85D30005B46A4 /* TabPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706F23B85D30005B46A4 /* TabPageCell.swift */; };
 		C737708023B85D30005B46A4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737707223B85D30005B46A4 /* PageViewController.swift */; };
 		C737708323B86232005B46A4 /* TabPageScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C737707023B85D30005B46A4 /* TabPageScrollViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C73E390A21F1B0420059701A /* TabPageScrollViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C73E38E721F1AF390059701A /* TabPageScrollViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -73,7 +72,6 @@
 		C737706B23B85D30005B46A4 /* TabPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageViewController.swift; sourceTree = "<group>"; };
 		C737706D23B85D30005B46A4 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		C737706E23B85D30005B46A4 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
-		C737706F23B85D30005B46A4 /* TabPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageCell.swift; sourceTree = "<group>"; };
 		C737707023B85D30005B46A4 /* TabPageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabPageScrollViewController.h; sourceTree = "<group>"; };
 		C737707223B85D30005B46A4 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		C737707323B85D30005B46A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 			children = (
 				C737706D23B85D30005B46A4 /* CategoryCell.swift */,
 				C737706E23B85D30005B46A4 /* CategoryCell.xib */,
-				C737706F23B85D30005B46A4 /* TabPageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -355,7 +352,6 @@
 			files = (
 				C737707723B85D30005B46A4 /* PageModel.swift in Sources */,
 				C737708023B85D30005B46A4 /* PageViewController.swift in Sources */,
-				C737707D23B85D30005B46A4 /* TabPageCell.swift in Sources */,
 				C737707423B85D30005B46A4 /* CategoryCollectionViewController.swift in Sources */,
 				C737707923B85D30005B46A4 /* TabPageObserver.swift in Sources */,
 				C737707B23B85D30005B46A4 /* CategoryCell.swift in Sources */,
