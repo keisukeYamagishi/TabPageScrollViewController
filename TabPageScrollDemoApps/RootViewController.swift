@@ -6,9 +6,9 @@
 //  Copyright © 2019 Shichimitoucarashi. All rights reserved.
 //
 
+import CoreML
 import TabPageScrollViewController
 import UIKit
-import CoreML
 
 @available(iOS 11.0, *)
 final class RootViewControler: TabPageScrollViewController {
