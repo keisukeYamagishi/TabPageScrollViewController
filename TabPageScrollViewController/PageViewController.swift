@@ -9,131 +9,124 @@
 import UIKit
 
 class PageViewController: UIPageViewController {
-    
     var vcs: [UIViewController] = []
     var observer: TabPageObserver!
-    
+
     var currentIndex: Int? {
         guard let viewController = viewControllers?.first else {
             return nil
         }
-        return self.vcs.map{ $0 }.firstIndex(of: viewController)
+        return vcs.map { $0 }.firstIndex(of: viewController)
     }
-    
-    var beforeIndex:Int = 0
-    
-    override init(transitionStyle style: UIPageViewController.TransitionStyle,
-                  navigationOrientation: UIPageViewController.NavigationOrientation,
-                  options: [UIPageViewController.OptionsKey : Any]? = nil) {
+
+    var beforeIndex: Int = 0
+
+    override init(transitionStyle _: UIPageViewController.TransitionStyle,
+                  navigationOrientation _: UIPageViewController.NavigationOrientation,
+                  options _: [UIPageViewController.OptionsKey: Any]? = nil)
+    {
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: [:])
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.dataSource = self
-        self.delegate = self
-        
-        self.setScrollView()
-        
-        self.observer.tabBarNotify = self
-        
-        super.setViewControllers([self.vcs[0]],
+
+        dataSource = self
+        delegate = self
+
+        setScrollView()
+
+        observer.tabBarNotify = self
+
+        super.setViewControllers([vcs[0]],
                                  direction: .forward,
                                  animated: true,
                                  completion: nil)
     }
-    
-    private func setScrollView () {
+
+    private func setScrollView() {
         let scrollView = view.subviews.compactMap { $0 as? UIScrollView }.first
         scrollView?.scrollsToTop = false
         scrollView?.delegate = self
     }
 }
 
-extension PageViewController : UIPageViewControllerDataSource {
-    
-    
+extension PageViewController: UIPageViewControllerDataSource {
     func pageViewController(viewController: UIViewController, isAfter: Bool) -> UIViewController? {
-        
-        guard var index = self.vcs.map({$0}).firstIndex(of: viewController) else {
+        guard var index = vcs.map({ $0 }).firstIndex(of: viewController) else {
             return nil
         }
-        
+
         if isAfter {
             index += 1
-        }else{
+        } else {
             index -= 1
         }
-        
-        if index >= 0 && index < self.vcs.count {
-            return self.vcs[index]
+
+        if index >= 0, index < vcs.count {
+            return vcs[index]
         }
         return nil
     }
-    
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return self.pageViewController(viewController: viewController, isAfter: true)
+
+    func pageViewController(_: UIPageViewController,
+                            viewControllerAfter viewController: UIViewController) -> UIViewController?
+    {
+        return pageViewController(viewController: viewController, isAfter: true)
     }
-    
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerBefore viewController: UIViewController) -> UIViewController? {        
-        return self.pageViewController(viewController: viewController, isAfter: false)
+
+    func pageViewController(_: UIPageViewController,
+                            viewControllerBefore viewController: UIViewController) -> UIViewController?
+    {
+        return pageViewController(viewController: viewController, isAfter: false)
     }
 }
 
-extension PageViewController:UIPageViewControllerDelegate {
-    
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            willTransitionTo pendingViewControllers: [UIViewController]){
-        
-        self.observer.willScrollViewController(index: currentIndex!, viewController: pendingViewControllers.first!)
+extension PageViewController: UIPageViewControllerDelegate {
+    func pageViewController(_: UIPageViewController,
+                            willTransitionTo pendingViewControllers: [UIViewController])
+    {
+        observer.willScrollViewController(index: currentIndex!, viewController: pendingViewControllers.first!)
     }
-    
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            didFinishAnimating finished: Bool,
+
+    func pageViewController(_: UIPageViewController,
+                            didFinishAnimating _: Bool,
                             previousViewControllers: [UIViewController],
-                            transitionCompleted completed: Bool){
-        
-        self.observer.movePosition(index: currentIndex!)
-        self.observer.didScrollViewController(index: currentIndex!, viewController: previousViewControllers.first!)
+                            transitionCompleted _: Bool)
+    {
+        observer.movePosition(index: currentIndex!)
+        observer.didScrollViewController(index: currentIndex!, viewController: previousViewControllers.first!)
     }
 }
 
 extension PageViewController: UIScrollViewDelegate {
-    
-    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        
-    }
-    
+    public func scrollViewWillBeginDragging(_: UIScrollView) {}
+
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.observer.pageScrollObserver(contetntOffset: scrollView.contentOffset)
+        observer.pageScrollObserver(contetntOffset: scrollView.contentOffset)
     }
-    
-    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {}
+
+    public func scrollViewDidEndDecelerating(_: UIScrollView) {}
 }
 
-extension PageViewController: TabChangeNotify{
-    
+extension PageViewController: TabChangeNotify {
     func changeTagNotify(index: IndexPath) {
-        if index.row != self.observer.selected {
-            
-            let direction:NavigationDirection!
-            
-            if index.row > self.observer.selected {
+        if index.row != observer.selected {
+            let direction: NavigationDirection!
+
+            if index.row > observer.selected {
                 direction = .forward
-            }else{
+            } else {
                 direction = .reverse
             }
-            
-            self.observer.tabCangeNotfy(index: index.row, viewController: self.vcs[currentIndex!])
-            
-            super.setViewControllers([self.vcs[index.row]],
+
+            observer.tabCangeNotfy(index: index.row, viewController: vcs[currentIndex!])
+
+            super.setViewControllers([vcs[index.row]],
                                      direction: direction,
                                      animated: true,
                                      completion: nil)

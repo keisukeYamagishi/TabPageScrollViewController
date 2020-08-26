@@ -7,26 +7,24 @@
 //
 
 import UIKit
-//import SHColor
+// import SHColor
 
-final class ViewController: UIViewController{
-    
+final class ViewController: UIViewController {
     static let identifer = "ViewController"
-       
-    @IBOutlet weak var label: UILabel!
-    
+
+    @IBOutlet var label: UILabel!
+
     var number: Int = 0
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        self.label.text = self.number.description
-        
-        self.view.backgroundColor = self.color(num: self.number)
+
+        label.text = number.description
+
+        view.backgroundColor = color(num: number)
     }
 
-    private func color (num: Int) -> UIColor {
-
+    private func color(num: Int) -> UIColor {
         switch num {
         case 0:
             return .white
