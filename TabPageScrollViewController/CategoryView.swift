@@ -19,8 +19,8 @@ open class CategoryView: UIView {
         }
     }
 
-    var isTapCell: Bool = false
-    var frames: [CGRect] = []
+    private var isTapCell: Bool = false
+    private var frames: [CGRect] = []
 
     public convenience init(frame: CGRect,
                             items: [String])
