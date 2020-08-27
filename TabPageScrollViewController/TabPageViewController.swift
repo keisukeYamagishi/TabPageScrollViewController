@@ -20,7 +20,6 @@ open class TabPageScrollViewController: UIViewController {
     public var tabItems: [TabItem] = []
     public var delegate: TabPageDelegate?
     public var observer: TabPageObserver = TabPageObserver()
-//    var headerView: UIView!
     var pageView: UIView!
     private var barItem: UIBarButtonItem!
     public var categoryView: CategoryView!
