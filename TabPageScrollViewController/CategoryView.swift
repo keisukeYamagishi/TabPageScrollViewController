@@ -16,7 +16,9 @@ open class CategoryView: UIView {
     var isTapCell: Bool = false
     var frames: [CGRect] = []
 
-    public convenience init(frame: CGRect, items: [String]) {
+    public convenience init(frame: CGRect,
+                            items: [String])
+    {
         self.init(frame: frame)
         self.items = items
         confgiure()
@@ -26,7 +28,7 @@ open class CategoryView: UIView {
         super.init(frame: frame)
     }
 
-    required public init?(coder _: NSCoder) {
+    public required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 

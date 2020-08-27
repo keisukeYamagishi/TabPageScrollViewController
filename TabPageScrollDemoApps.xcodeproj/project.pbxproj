@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90CDF90124F7564800FB9362 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDF90024F7564800FB9362 /* String+.swift */; };
 		C70E827721D31EA700A1CD80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E827621D31EA700A1CD80 /* AppDelegate.swift */; };
 		C70E827E21D31EA900A1CD80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70E827D21D31EA900A1CD80 /* Assets.xcassets */; };
 		C70E828121D31EA900A1CD80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70E827F21D31EA900A1CD80 /* LaunchScreen.storyboard */; };
@@ -59,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		90CDF90024F7564800FB9362 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		C70E827321D31EA700A1CD80 /* TabPageScrollDemoApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabPageScrollDemoApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70E827621D31EA700A1CD80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70E827D21D31EA900A1CD80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				C737706823B85D2F005B46A4 /* PageModel.swift */,
 				C737706923B85D2F005B46A4 /* Filtering.swift */,
 				C737706A23B85D2F005B46A4 /* TabPageObserver.swift */,
+				90CDF90024F7564800FB9362 /* String+.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C737707723B85D30005B46A4 /* PageModel.swift in Sources */,
+				90CDF90124F7564800FB9362 /* String+.swift in Sources */,
 				C737708023B85D30005B46A4 /* PageViewController.swift in Sources */,
 				C737707423B85D30005B46A4 /* CategoryView.swift in Sources */,
 				C737707923B85D30005B46A4 /* TabPageObserver.swift in Sources */,

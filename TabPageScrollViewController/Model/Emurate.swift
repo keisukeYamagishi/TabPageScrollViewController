@@ -8,20 +8,18 @@
 
 import UIKit
 
-struct Cell {
-    let index: Int
-    let frame: CGRect
-}
-
 class Emurate {
     var items: [String] = []
     let height: CGFloat
+    let margin: CGFloat
 
     init(items: [String],
-         height: CGFloat)
+         height: CGFloat,
+         margin: CGFloat = 20)
     {
         self.items = items
         self.height = height
+        self.margin = margin
     }
 
     static func frames(with items: [String],
@@ -38,19 +36,12 @@ class Emurate {
             let frame = CGRect(
                 x: totalWidth,
                 y: 0,
-                width: title.size(with: font).width + 20,
+                width: title.toSize(with: font).width + margin,
                 height: height
             )
             frames.append(frame)
             totalWidth += frame.size.width
         }
         return frames
-    }
-}
-
-public extension String {
-    func size(with font: UIFont) -> CGSize {
-        let attributes = [NSAttributedString.Key.font: font]
-        return size(withAttributes: attributes)
     }
 }
