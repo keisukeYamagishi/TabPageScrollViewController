@@ -10,6 +10,6 @@ import Foundation
 
 internal extension String {
     func toSize(with font: UIFont) -> CGSize {
-        self.size(withAttributes: [NSAttributedString.Key.font: font])
+        return self.size(withAttributes: [NSAttributedString.Key.font: font])
     }
 }

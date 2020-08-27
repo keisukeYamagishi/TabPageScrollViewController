@@ -12,7 +12,13 @@ open class CategoryView: UIView {
     var collectionView: UICollectionView!
     public var navigationView: UIView!
     public var items: [String] = []
-    var observer: TabPageObserver!
+    var observer: TabPageObserver! {
+        didSet{
+            observer.scrollObserver = self
+            observer.navigationObserver = self
+        }
+    }
+
     var isTapCell: Bool = false
     var frames: [CGRect] = []
 
@@ -32,19 +38,14 @@ open class CategoryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override open func draw(_ rect: CGRect) {
-        super.draw(rect)
-        observer.scrollObserver = self
-        observer.navigationObserver = self
-    }
-
-    func confgiure() {
+    lazy var confgiure: () -> Void = {
         setNavigation()
         setCollectionView()
         setScrollView()
         frames = Emurate.frames(with: items, height: bounds.height)
         setCellsPosition()
-    }
+        return {}
+    }()
 
     private func setCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -107,7 +108,7 @@ extension CategoryView: UICollectionViewDelegateFlowLayout {
 
 extension CategoryView: UICollectionViewDataSource {
     public func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        items.count
+        return items.count
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

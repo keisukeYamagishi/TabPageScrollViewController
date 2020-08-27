@@ -26,7 +26,7 @@ class Emurate {
                        height: CGFloat,
                        font: UIFont = UIFont.systemFont(ofSize: 20)) -> [CGRect]
     {
-        Emurate(items: items, height: height).frames(font: font)
+        return Emurate(items: items, height: height).frames(font: font)
     }
 
     func frames(font: UIFont = UIFont.systemFont(ofSize: 20)) -> [CGRect] {
