@@ -62,6 +62,7 @@ final class RootViewControler: TabPageScrollViewController {
 
 @available(iOS 11.0, *)
 extension RootViewControler: TabPageDelegate {
+
     func categoryView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath, selected: Int) -> UICollectionViewCell {
         let cell: CategoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
 
@@ -78,25 +79,5 @@ extension RootViewControler: TabPageDelegate {
 
     func categoryView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
-    }
-
-    func willScrollPage(index: Int, viewController: UIViewController) {
-        let vc: ViewController = viewController as! ViewController
-
-        print("index: \(index) viewController: \(vc.number)")
-    }
-
-    func didScrollPage(index: Int, viewController: UIViewController) {
-        let vc: ViewController = viewController as! ViewController
-
-        print("index: \(index) viewController: \(vc.number)")
-    }
-
-    func tabChangeNotify(index: IndexPath, vc _: UIViewController) {
-        print("index: \(index)")
-    }
-
-    func moveNavigationNotify(index: IndexPath) {
-        print("index: \(index)")
     }
 }

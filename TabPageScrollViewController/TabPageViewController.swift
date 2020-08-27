@@ -8,11 +8,11 @@
 
 import UIKit
 
-public protocol TabPageDelegate {
-    func willScrollPage(index: Int, viewController: UIViewController)
-    func didScrollPage(index: Int, viewController: UIViewController)
-    func tabChangeNotify(index: IndexPath, vc: UIViewController)
-    func moveNavigationNotify(index: IndexPath)
+@objc public protocol TabPageDelegate {
+    @objc optional func willScrollPage(index: Int, viewController: UIViewController)
+    @objc optional func didScrollPage(index: Int, viewController: UIViewController)
+    @objc optional func tabChangeNotify(index: IndexPath, vc: UIViewController)
+    @objc optional func moveNavigationNotify(index: IndexPath)
     func categoryView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath, selected: Int) -> UICollectionViewCell
     func categoryView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
 }
@@ -98,19 +98,19 @@ open class TabPageScrollViewController: UIViewController {
 @available(iOS 11.0, *)
 extension TabPageScrollViewController: TabPageControllerDelegate {
     func willScrollPageViewController(index: Int, viewController: UIViewController) {
-        delegate?.willScrollPage(index: index, viewController: viewController)
+        delegate?.willScrollPage?(index: index, viewController: viewController)
     }
 
     func didScrollPageViewController(index: Int, viewController: UIViewController) {
-        delegate?.didScrollPage(index: index, viewController: viewController)
+        delegate?.didScrollPage?(index: index, viewController: viewController)
     }
 
     func tabChange(index: IndexPath, viewController: UIViewController) {
-        delegate?.tabChangeNotify(index: index, vc: viewController)
+        delegate?.tabChangeNotify?(index: index, vc: viewController)
     }
 
     func moveNavigationView(index: IndexPath) {
-        delegate?.moveNavigationNotify(index: index)
+        delegate?.moveNavigationNotify?(index: index)
     }
 }
 
