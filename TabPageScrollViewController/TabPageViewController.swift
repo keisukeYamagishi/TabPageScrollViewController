@@ -20,9 +20,10 @@ open class TabPageScrollViewController: UIViewController {
     public var tabItems: [TabItem] = []
     public var delegate: TabPageDelegate?
     public var observer: TabPageObserver = TabPageObserver()
-    var headerView: UIView!
+//    var headerView: UIView!
     var pageView: UIView!
     private var barItem: UIBarButtonItem!
+    public var categoryView: CategoryView!
     private var isUp = false
     private var titles: [String] = []
     private var vcs: [UIViewController] = []
@@ -31,35 +32,35 @@ open class TabPageScrollViewController: UIViewController {
         super.viewDidLoad()
 
         let filtering = Filtering(items: tabItems)
+        vcs = filtering.viewControllers
 
-        headerView = UIView(frame: CGRect(x: 0,
-                                          y: 0,
-                                          width: view.frame.size.width,
-                                          height: 32))
+        categoryView = CategoryView(frame: CGRect(x: 0,
+                                                  y: 0,
+                                                  width: view.frame.size.width,
+                                                  height: 32),
+                                    items: filtering.titles)
 
         pageView = UIView(frame: CGRect(x: 0,
                                         y: 0,
                                         width: view.frame.size.width,
-                                        height: view.frame.size.height - headerView.frame.size.height))
+                                        height: view.frame.size.height - categoryView.frame.size.height))
 
         view.addSubview(pageView)
-        view.addSubview(headerView)
+        view.addSubview(categoryView)
 
-        titles = filtering.titles
-        vcs = filtering.viewControllers
         observer.delegate = self
+        categoryView.observer = observer
         observer.viewControllers = filtering.viewControllers
         setChildViewController()
     }
 
     override open func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        headerView.frame.origin.y = view.safeAreaInsets.top
-        pageView.frame.origin.y = headerView.frame.origin.y + headerView.frame.size.height
+        categoryView.frame.origin.y = view.safeAreaInsets.top
+        pageView.frame.origin.y = categoryView.frame.origin.y + categoryView.frame.size.height
     }
 
     private func setChildViewController() {
-        addContainer(viewController: categoryViewController, containerView: headerView)
         addContainer(viewController: rootPageViewController, containerView: pageView)
     }
 
@@ -76,14 +77,6 @@ open class TabPageScrollViewController: UIViewController {
         rootPageViewController.observer = observer
         rootPageViewController.vcs = vcs
         return rootPageViewController
-    }
-
-    private var categoryViewController: CategoryCollectionViewController {
-        let categoryViewController = CategoryCollectionViewController()
-        categoryViewController.observer = observer
-        categoryViewController.observer = observer
-        categoryViewController.items = titles
-        return categoryViewController
     }
 }
 
