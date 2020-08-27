@@ -13,6 +13,8 @@ public protocol TabPageDelegate {
     func didScrollPage(index: Int, viewController: UIViewController)
     func tabChangeNotify(index: IndexPath, vc: UIViewController)
     func moveNavigationNotify(index: IndexPath)
+    func categoryView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath, selected: Int) -> UICollectionViewCell
+    func categoryView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
 }
 
 @available(iOS 11.0, *)
@@ -20,6 +22,12 @@ open class TabPageScrollViewController: UIViewController {
     public var tabItems: [TabItem] = []
     public var delegate: TabPageDelegate?
     public var observer: TabPageObserver = TabPageObserver()
+    public var tabBackgroundColor: UIColor? {
+        didSet {
+            categoryView.navigationView.backgroundColor = tabBackgroundColor
+        }
+    }
+
     var pageView: UIView!
     private var barItem: UIBarButtonItem!
     public var categoryView: CategoryView!
@@ -49,6 +57,8 @@ open class TabPageScrollViewController: UIViewController {
 
         observer.delegate = self
         categoryView.observer = observer
+        categoryView.navigationView.backgroundColor = tabBackgroundColor ?? .black
+        categoryView.delegate = self
         observer.viewControllers = filtering.viewControllers
         setChildViewController()
     }
@@ -77,6 +87,12 @@ open class TabPageScrollViewController: UIViewController {
         rootPageViewController.vcs = vcs
         return rootPageViewController
     }
+
+    public func register(nibName: String, reuseIdentifier: String) {
+        categoryView.collectionView.register(UINib(nibName: nibName,
+                                                   bundle: Bundle(for: type(of: self))),
+                                             forCellWithReuseIdentifier: reuseIdentifier)
+    }
 }
 
 @available(iOS 11.0, *)
@@ -95,5 +111,15 @@ extension TabPageScrollViewController: TabPageControllerDelegate {
 
     func moveNavigationView(index: IndexPath) {
         delegate?.moveNavigationNotify(index: index)
+    }
+}
+
+extension TabPageScrollViewController: CategoryViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath, selected: Int) -> UICollectionViewCell {
+        return delegate?.categoryView(collectionView, cellForItemAt: indexPath, selected: selected) ?? UICollectionViewCell()
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.categoryView(collectionView, didSelectItemAt: indexPath)
     }
 }

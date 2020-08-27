@@ -8,12 +8,19 @@
 
 import UIKit
 
+internal protocol CategoryViewDelegate: AnyObject {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath, selected: Int) -> UICollectionViewCell
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath)
+}
+
 open class CategoryView: UIView {
-    var collectionView: UICollectionView!
+    internal var collectionView: UICollectionView!
     public var navigationView: UIView!
     public var items: [String] = []
+    internal weak var delegate: CategoryViewDelegate?
+
     var observer: TabPageObserver! {
-        didSet{
+        didSet {
             observer.scrollObserver = self
             observer.navigationObserver = self
         }
@@ -42,6 +49,7 @@ open class CategoryView: UIView {
         setNavigation()
         setCollectionView()
         setScrollView()
+        setBoaderColor()
         frames = Emurate.frames(with: items, height: bounds.height)
         setCellsPosition()
         return {}
@@ -59,13 +67,11 @@ open class CategoryView: UIView {
         collectionView.dataSource = self
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
-
-        collectionView.register(UINib(nibName: "CategoryCell", bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: "Cell")
         addSubview(collectionView)
     }
 
     private func setNavigation() {
-        navigationView = UIView(frame: CGRect(x: 0, y: 26, width: 124, height: 3))
+        navigationView = UIView(frame: CGRect(x: 0, y: bounds.height - 3, width: 124, height: 3))
         navigationView.backgroundColor = .black
         addSubview(navigationView)
     }
@@ -74,6 +80,15 @@ open class CategoryView: UIView {
         let scrollView = collectionView.subviews.compactMap { $0 as? UIScrollView }.first
         scrollView?.scrollsToTop = false
         scrollView?.delegate = self
+    }
+
+    private func setBoaderColor() {
+        let border = CALayer()
+        border.frame = CGRect(x: 0, y: frame.height - 1, width: frame.width, height: 1)
+        border.backgroundColor = UIColor.lightGray.cgColor
+        layer.addSublayer(border)
+//        layer.borderColor = UIColor.lightGray.cgColor
+//        layer.borderWidth = 1.0
     }
 
     private func setCellsPosition() {
@@ -112,25 +127,18 @@ extension CategoryView: UICollectionViewDataSource {
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: CategoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CategoryCell
-
-        cell.title.text = items[indexPath.row]
-        cell.tag = indexPath.row
-
-        if observer.selected == indexPath.row {
-            cell.title.textColor = UIColor(red: 69 / 255, green: 134 / 255, blue: 255 / 255, alpha: 1.0)
-        } else {
-            cell.title.textColor = .lightGray
-        }
-        return cell
+        return delegate?.collectionView(collectionView, cellForItemAt: indexPath, selected: observer.selected) ?? UICollectionViewCell()
     }
+}
 
-    public func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+extension CategoryView: UICollectionViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         observer.tabNotify(index: indexPath)
         observer.selected = indexPath.row
         isTapCell = true
         moveNavigationView(index: indexPath.row)
         collectionView.reloadData()
+        delegate?.collectionView(collectionView, didSelectItemAt: indexPath)
     }
 }
 
@@ -165,8 +173,6 @@ extension CategoryView: TabObserver {
 }
 
 extension CategoryView: PageViewObserver {
-    func pageBeginDraging(contentOffset _: CGPoint) {}
-
     func pageViewObserer(contentOffSet: CGPoint) {
         guard !isTapCell else {
             return
