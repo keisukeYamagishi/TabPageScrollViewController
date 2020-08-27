@@ -97,8 +97,7 @@ extension CategoryView: UICollectionViewDelegateFlowLayout {
                                sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         if items.isEmpty {
-            let cellSize: CGFloat = frame.size.width / CGFloat(items.count)
-            return CGSize(width: cellSize, height: 23)
+            return .zero
         }
         return frames[indexPath.row].size
     }
