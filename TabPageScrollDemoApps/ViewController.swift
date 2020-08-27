@@ -7,7 +7,6 @@
 //
 
 import UIKit
-// import SHColor
 
 final class ViewController: UIViewController {
     static let identifer = "ViewController"

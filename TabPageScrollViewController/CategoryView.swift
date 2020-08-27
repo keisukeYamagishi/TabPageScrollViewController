@@ -1,5 +1,5 @@
 //
-//  CategoryCollectionViewController.swift
+//  CategoryView.swift
 //  FunRecipes
 //
 //  Created by Shichimitoucarashi on 12/26/18.
@@ -8,29 +8,44 @@
 
 import UIKit
 
-class CategoryCollectionViewController: UIViewController {
+open class CategoryView: UIView {
     var collectionView: UICollectionView!
     public var navigationView: UIView!
     public var items: [String] = []
-    var observer: TabPageObserver!
-    var isTapCell: Bool = false
-    var frames: [CGRect] = []
+    var observer: TabPageObserver! {
+        didSet{
+            observer.scrollObserver = self
+            observer.navigationObserver = self
+        }
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private var isTapCell: Bool = false
+    private var frames: [CGRect] = []
+
+    public convenience init(frame: CGRect,
+                            items: [String])
+    {
+        self.init(frame: frame)
+        self.items = items
+        confgiure()
+    }
+
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    public required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    lazy var confgiure: () -> Void = {
         setNavigation()
         setCollectionView()
-        observer.scrollObserver = self
         setScrollView()
-        observer.navigationObserver = self
-
-        frames = Emurate(items: items).frames()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        frames = Emurate.frames(with: items, height: bounds.height)
         setCellsPosition()
-    }
+        return {}
+    }()
 
     private func setCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -38,7 +53,7 @@ class CategoryCollectionViewController: UIViewController {
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
 
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 23), collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 23), collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -46,13 +61,13 @@ class CategoryCollectionViewController: UIViewController {
         collectionView.showsHorizontalScrollIndicator = false
 
         collectionView.register(UINib(nibName: "CategoryCell", bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: "Cell")
-        view.addSubview(collectionView)
+        addSubview(collectionView)
     }
 
     private func setNavigation() {
         navigationView = UIView(frame: CGRect(x: 0, y: 26, width: 124, height: 3))
         navigationView.backgroundColor = .black
-        view.addSubview(navigationView)
+        addSubview(navigationView)
     }
 
     private func setScrollView() {
@@ -79,26 +94,24 @@ class CategoryCollectionViewController: UIViewController {
     }
 }
 
-extension CategoryCollectionViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_: UICollectionView,
-                        layout _: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize
+extension CategoryView: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_: UICollectionView,
+                               layout _: UICollectionViewLayout,
+                               sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        if !items.isEmpty {
-            return frames[indexPath.row].size
+        if items.isEmpty {
+            return .zero
         }
-
-        let cellSize: CGFloat = view.frame.size.width / 5 - 1
-        return CGSize(width: cellSize, height: 23)
+        return frames[indexPath.row].size
     }
 }
 
-extension CategoryCollectionViewController: UICollectionViewDataSource {
-    func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
+extension CategoryView: UICollectionViewDataSource {
+    public func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return items.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CategoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CategoryCell
 
         cell.title.text = items[indexPath.row]
@@ -112,7 +125,7 @@ extension CategoryCollectionViewController: UICollectionViewDataSource {
         return cell
     }
 
-    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         observer.tabNotify(index: indexPath)
         observer.selected = indexPath.row
         isTapCell = true
@@ -121,7 +134,7 @@ extension CategoryCollectionViewController: UICollectionViewDataSource {
     }
 }
 
-extension CategoryCollectionViewController: UIScrollViewDelegate {
+extension CategoryView: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollOffsetX = scrollView.contentOffset.x
 
@@ -134,7 +147,7 @@ extension CategoryCollectionViewController: UIScrollViewDelegate {
     }
 }
 
-extension CategoryCollectionViewController: TabObserver {
+extension CategoryView: TabObserver {
     func navigationViewObserver(index: Int) {
         observer.selected = index
 
@@ -151,7 +164,7 @@ extension CategoryCollectionViewController: TabObserver {
     }
 }
 
-extension CategoryCollectionViewController: PageViewObserver {
+extension CategoryView: PageViewObserver {
     func pageBeginDraging(contentOffset _: CGPoint) {}
 
     func pageViewObserer(contentOffSet: CGPoint) {
@@ -159,9 +172,9 @@ extension CategoryCollectionViewController: PageViewObserver {
             return
         }
 
-        let movedPoint = contentOffSet.x - view.bounds.size.width
+        let movedPoint = contentOffSet.x - bounds.size.width
 
-        let scrolRate = movedPoint * (navigationView.frame.size.width / view.frame.size.width)
+        let scrolRate = movedPoint * (navigationView.frame.size.width / frame.size.width)
 
         let frame = frames[observer.selected]
         navigationView.frame.origin.x = scrolRate + (frame.origin.x - collectionView.contentOffset.x)

@@ -6,6 +6,7 @@
 //  Copyright © 2019 Shichimitoucarashi. All rights reserved.
 //
 
+import CoreML
 import TabPageScrollViewController
 import UIKit
 
@@ -39,16 +40,16 @@ final class RootViewControler: TabPageScrollViewController {
         let vc11: ViewController = storyboard!.instantiateViewController(withIdentifier: ViewController.identifer) as! ViewController
         vc11.number = 11
 
-        tabItems = [TabItem(title: "devxoul/SwiftUITodo", vc: vc1),
-                    TabItem(title: "CocoaPods", vc: vc2),
-                    TabItem(title: "github", vc: vc3),
-                    TabItem(title: "google", vc: vc4),
-                    TabItem(title: "Kingfisher", vc: vc5),
+        tabItems = [TabItem(title: "UIKit", vc: vc1),
+                    TabItem(title: "Foundation", vc: vc2),
+                    TabItem(title: "Photos", vc: vc3),
+                    TabItem(title: "ARKit", vc: vc4),
+                    TabItem(title: "GameKit", vc: vc5),
                     TabItem(title: "RxAlert", vc: vc6),
-                    TabItem(title: "ocr", vc: vc7),
-                    TabItem(title: "CHIPageControl", vc: vc8),
-                    TabItem(title: "AudioKit", vc: vc9),
-                    TabItem(title: "react-native", vc: vc10),
+                    TabItem(title: "CoreBluetooth", vc: vc7),
+                    TabItem(title: "SQLite3", vc: vc8),
+                    TabItem(title: "CoreML", vc: vc9),
+                    TabItem(title: "RxSwift", vc: vc10),
                     TabItem(title: "xsort", vc: vc11)]
 
         view.backgroundColor = .white
