@@ -16,7 +16,7 @@ open class CategoryView: UIView {
     var isTapCell: Bool = false
     var frames: [CGRect] = []
 
-    convenience public init(frame: CGRect, items: [String]) {
+    public convenience init(frame: CGRect, items: [String]) {
         self.init(frame: frame)
         self.items = items
         confgiure()
@@ -26,7 +26,7 @@ open class CategoryView: UIView {
         super.init(frame: frame)
     }
 
-    required public init?(coder: NSCoder) {
+    required public init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -36,11 +36,11 @@ open class CategoryView: UIView {
         observer.navigationObserver = self
     }
 
-    func confgiure(){
+    func confgiure() {
         setNavigation()
         setCollectionView()
         setScrollView()
-        frames = Emurate(items: items).frames()
+        frames = Emurate.frames(with: items, height: bounds.height)
         setCellsPosition()
     }
 
@@ -93,22 +93,20 @@ open class CategoryView: UIView {
 
 extension CategoryView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_: UICollectionView,
-                        layout _: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize
+                               layout _: UICollectionViewLayout,
+                               sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        if !items.isEmpty {
-            return frames[indexPath.row].size
+        if items.isEmpty {
+            let cellSize: CGFloat = frame.size.width / CGFloat(items.count)
+            return CGSize(width: cellSize, height: 23)
         }
-
-        let cellSize: CGFloat = frame.size.width / 5 - 1
-        return CGSize(width: cellSize, height: 23)
+        return frames[indexPath.row].size
     }
 }
 
 extension CategoryView: UICollectionViewDataSource {
-    
     public func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        return items.count
+        items.count
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
