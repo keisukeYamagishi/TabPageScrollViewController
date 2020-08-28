@@ -87,8 +87,6 @@ open class CategoryView: UIView {
         border.frame = CGRect(x: 0, y: frame.height - 1, width: frame.width, height: 1)
         border.backgroundColor = UIColor.lightGray.cgColor
         layer.addSublayer(border)
-//        layer.borderColor = UIColor.lightGray.cgColor
-//        layer.borderWidth = 1.0
     }
 
     private func setCellsPosition() {

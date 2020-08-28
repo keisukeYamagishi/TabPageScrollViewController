@@ -28,8 +28,7 @@ protocol PageViewObserver: class {
     func pageViewObserer(contentOffSet: CGPoint)
 }
 
-public class TabPageObserver {
-    var viewControllers: [UIViewController] = []
+public class TabPageObserver {   
     var selected: Int = 0
     weak var navigationObserver: TabObserver?
     weak var tabBarNotify: TabChangeNotify?
@@ -58,7 +57,7 @@ public class TabPageObserver {
         delegate?.didScrollPageViewController(index: index, viewController: viewController)
     }
 
-    func tabCangeNotfy(index: Int, viewController: UIViewController) {
+    func tabCangeNotify(index: Int, viewController: UIViewController) {
         delegate?.tabChange(index: IndexPath(row: index, section: 0), viewController: viewController)
     }
 

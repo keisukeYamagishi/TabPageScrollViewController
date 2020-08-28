@@ -10,7 +10,7 @@ import UIKit
 
 class PageViewController: UIPageViewController {
     var vcs: [UIViewController] = []
-    var observer: TabPageObserver!
+    weak var observer: TabPageObserver!
 
     var currentIndex: Int? {
         guard let viewController = viewControllers?.first else {
@@ -107,8 +107,6 @@ extension PageViewController: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         observer.pageScrollObserver(contetntOffset: scrollView.contentOffset)
     }
-
-    public func scrollViewDidEndDecelerating(_: UIScrollView) {}
 }
 
 extension PageViewController: TabChangeNotify {
@@ -122,7 +120,7 @@ extension PageViewController: TabChangeNotify {
                 direction = .reverse
             }
 
-            observer.tabCangeNotfy(index: index.row, viewController: vcs[currentIndex!])
+            observer.tabCangeNotify(index: index.row, viewController: vcs[currentIndex!])
 
             super.setViewControllers([vcs[index.row]],
                                      direction: direction,

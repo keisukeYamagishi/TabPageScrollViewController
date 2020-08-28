@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc public protocol TabPageDelegate {
+@objc public protocol TabPageDelegate: AnyObject {
     @objc optional func willScrollPage(index: Int, viewController: UIViewController)
     @objc optional func didScrollPage(index: Int, viewController: UIViewController)
     @objc optional func tabChangeNotify(index: IndexPath, vc: UIViewController)
@@ -31,7 +31,6 @@ open class TabPageScrollViewController: UIViewController {
     var pageView: UIView!
     private var barItem: UIBarButtonItem!
     public var categoryView: CategoryView!
-    private var isUp = false
     private var titles: [String] = []
     private var vcs: [UIViewController] = []
 
@@ -59,7 +58,6 @@ open class TabPageScrollViewController: UIViewController {
         categoryView.observer = observer
         categoryView.navigationView.backgroundColor = tabBackgroundColor ?? .black
         categoryView.delegate = self
-        observer.viewControllers = filtering.viewControllers
         setChildViewController()
     }
 
