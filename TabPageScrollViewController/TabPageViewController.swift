@@ -22,6 +22,7 @@ open class TabPageScrollViewController: UIViewController {
     public var tabItems: [TabItem] = []
     public var delegate: TabPageDelegate?
     public var observer: TabPageObserver = TabPageObserver()
+    public var tabHeight: CGFloat?
     public var tabBackgroundColor: UIColor? {
         didSet {
             categoryView.navigationView.backgroundColor = tabBackgroundColor
@@ -43,7 +44,7 @@ open class TabPageScrollViewController: UIViewController {
         categoryView = CategoryView(frame: CGRect(x: 0,
                                                   y: 0,
                                                   width: view.frame.size.width,
-                                                  height: 32),
+                                                  height: tabHeight ?? 38),
                                     items: filtering.titles)
 
         pageView = UIView(frame: CGRect(x: 0,

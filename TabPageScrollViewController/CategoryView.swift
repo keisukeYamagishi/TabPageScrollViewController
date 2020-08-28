@@ -13,7 +13,7 @@ internal protocol CategoryViewDelegate: AnyObject {
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath)
 }
 
-open class CategoryView: UIView {
+public class CategoryView: UIView {
     internal var collectionView: UICollectionView!
     public var navigationView: UIView!
     public var items: [String] = []
@@ -46,8 +46,8 @@ open class CategoryView: UIView {
     }
 
     lazy var confgiure: () -> Void = {
-        setNavigation()
         setCollectionView()
+        setNavigation()
         setScrollView()
         setBoaderColor()
         frames = Emurate.frames(with: items, height: bounds.height)
@@ -61,7 +61,7 @@ open class CategoryView: UIView {
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
 
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 23), collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: bounds.height), collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self

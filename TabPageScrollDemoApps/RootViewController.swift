@@ -53,7 +53,7 @@ final class RootViewControler: TabPageScrollViewController {
                     TabItem(title: "xsort", vc: vc11)]
 
         view.backgroundColor = .white
-
+        tabHeight = 50
         super.viewDidLoad()
         tabBackgroundColor = .black
         register(nibName: "CategoryCell", reuseIdentifier: "CategoryCell")
