@@ -9,7 +9,7 @@
 import UIKit
 
 class Emurate {
-    var items: [String] = []
+    let items: [String]
     let height: CGFloat
     let margin: CGFloat
 

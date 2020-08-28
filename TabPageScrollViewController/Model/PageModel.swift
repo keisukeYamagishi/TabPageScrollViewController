@@ -10,9 +10,10 @@ import Foundation
 import UIKit
 
 public struct TabItem {
-    public var title: String = ""
-    public var viewController: UIViewController!
-    public init(title: String, vc: UIViewController) {
+    public let title: String
+    public let viewController: UIViewController!
+    public init(title: String,
+                vc: UIViewController) {
         self.title = title
         viewController = vc
     }
