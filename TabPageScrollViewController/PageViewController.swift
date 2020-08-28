@@ -104,8 +104,6 @@ extension PageViewController: UIPageViewControllerDelegate {
 }
 
 extension PageViewController: UIScrollViewDelegate {
-    public func scrollViewWillBeginDragging(_: UIScrollView) {}
-
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         observer.pageScrollObserver(contetntOffset: scrollView.contentOffset)
     }

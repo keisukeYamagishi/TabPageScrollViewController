@@ -19,7 +19,16 @@ platform :ios do
   desc "Test pod lint and Build carthage"
   lane :test do
     carthage_build
-    pod_lint
+    build
+  end
+
+  desc "Build CI"
+  lane :build do
+    scan(
+      scheme: "TabPageScrollDemoApps", 
+      clean: true,
+      devices: ["iPhone 8"]
+    )
   end
 
   desc "Cocoapods lint the pod for all platforms"

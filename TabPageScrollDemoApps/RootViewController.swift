@@ -55,28 +55,29 @@ final class RootViewControler: TabPageScrollViewController {
         view.backgroundColor = .white
 
         super.viewDidLoad()
+        tabBackgroundColor = .black
+        register(nibName: "CategoryCell", reuseIdentifier: "CategoryCell")
     }
 }
 
 @available(iOS 11.0, *)
 extension RootViewControler: TabPageDelegate {
-    func willScrollPage(index: Int, viewController: UIViewController) {
-        let vc: ViewController = viewController as! ViewController
 
-        print("index: \(index) viewController: \(vc.number)")
+    func categoryView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath, selected: Int) -> UICollectionViewCell {
+        let cell: CategoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+
+        cell.title.text = tabItems[indexPath.row].title
+        cell.tag = indexPath.row
+
+        if selected == indexPath.row {
+            cell.title.textColor = UIColor(red: 69 / 255, green: 134 / 255, blue: 255 / 255, alpha: 1.0)
+        } else {
+            cell.title.textColor = .lightGray
+        }
+        return cell
     }
 
-    func didScrollPage(index: Int, viewController: UIViewController) {
-        let vc: ViewController = viewController as! ViewController
-
-        print("index: \(index) viewController: \(vc.number)")
-    }
-
-    func tabChangeNotify(index: IndexPath, vc _: UIViewController) {
-        print("index: \(index)")
-    }
-
-    func moveNavigationNotify(index: IndexPath) {
-        print("index: \(index)")
+    func categoryView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
 }

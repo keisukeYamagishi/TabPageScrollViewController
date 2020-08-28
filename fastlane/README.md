@@ -21,6 +21,11 @@ or alternatively using `brew install fastlane`
 fastlane ios test
 ```
 Test pod lint and Build carthage
+### ios build
+```
+fastlane ios build
+```
+Build CI
 ### ios carthage_build
 ```
 fastlane ios carthage_build

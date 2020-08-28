@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		90CDF90124F7564800FB9362 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDF90024F7564800FB9362 /* String+.swift */; };
+		90CDF90224F79BB700FB9362 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706D23B85D30005B46A4 /* CategoryCell.swift */; };
+		90CDF90324F79C0D00FB9362 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C737706E23B85D30005B46A4 /* CategoryCell.xib */; };
 		C70E827721D31EA700A1CD80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E827621D31EA700A1CD80 /* AppDelegate.swift */; };
 		C70E827E21D31EA900A1CD80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70E827D21D31EA900A1CD80 /* Assets.xcassets */; };
 		C70E828121D31EA900A1CD80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70E827F21D31EA900A1CD80 /* LaunchScreen.storyboard */; };
@@ -17,8 +19,6 @@
 		C737707823B85D30005B46A4 /* Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706923B85D2F005B46A4 /* Filtering.swift */; };
 		C737707923B85D30005B46A4 /* TabPageObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706A23B85D2F005B46A4 /* TabPageObserver.swift */; };
 		C737707A23B85D30005B46A4 /* TabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706B23B85D30005B46A4 /* TabPageViewController.swift */; };
-		C737707B23B85D30005B46A4 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737706D23B85D30005B46A4 /* CategoryCell.swift */; };
-		C737707C23B85D30005B46A4 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C737706E23B85D30005B46A4 /* CategoryCell.xib */; };
 		C737708023B85D30005B46A4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737707223B85D30005B46A4 /* PageViewController.swift */; };
 		C737708323B86232005B46A4 /* TabPageScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C737707023B85D30005B46A4 /* TabPageScrollViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C73E390A21F1B0420059701A /* TabPageScrollViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C73E38E721F1AF390059701A /* TabPageScrollViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -149,6 +149,7 @@
 				C70E827D21D31EA900A1CD80 /* Assets.xcassets */,
 				C70E827F21D31EA900A1CD80 /* LaunchScreen.storyboard */,
 				C70E828221D31EA900A1CD80 /* Info.plist */,
+				C737706C23B85D30005B46A4 /* View */,
 			);
 			path = TabPageScrollDemoApps;
 			sourceTree = "<group>";
@@ -183,7 +184,6 @@
 				C737707223B85D30005B46A4 /* PageViewController.swift */,
 				C737707023B85D30005B46A4 /* TabPageScrollViewController.h */,
 				C737706B23B85D30005B46A4 /* TabPageViewController.swift */,
-				C737706C23B85D30005B46A4 /* View */,
 			);
 			path = TabPageScrollViewController;
 			sourceTree = "<group>";
@@ -318,6 +318,7 @@
 				C70E828121D31EA900A1CD80 /* LaunchScreen.storyboard in Resources */,
 				C70E827E21D31EA900A1CD80 /* Assets.xcassets in Resources */,
 				C73F048221EB5AB200389E3D /* Main.storyboard in Resources */,
+				90CDF90324F79C0D00FB9362 /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +326,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C737707C23B85D30005B46A4 /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +346,7 @@
 				C778555E21F0CC52001D542B /* RootViewController.swift in Sources */,
 				C73F048421EB5AFA00389E3D /* ViewController.swift in Sources */,
 				C70E827721D31EA700A1CD80 /* AppDelegate.swift in Sources */,
+				90CDF90224F79BB700FB9362 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +359,6 @@
 				C737708023B85D30005B46A4 /* PageViewController.swift in Sources */,
 				C737707423B85D30005B46A4 /* CategoryView.swift in Sources */,
 				C737707923B85D30005B46A4 /* TabPageObserver.swift in Sources */,
-				C737707B23B85D30005B46A4 /* CategoryCell.swift in Sources */,
 				C737707623B85D30005B46A4 /* Emurate.swift in Sources */,
 				C737707A23B85D30005B46A4 /* TabPageViewController.swift in Sources */,
 				C737707823B85D30005B46A4 /* Filtering.swift in Sources */,
