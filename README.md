@@ -1,7 +1,8 @@
 # TabScrollPageViewController
 
-[![](https://img.shields.io/badge/lang-swift4.0-ff69b4.svg)](https://developer.apple.com/jp/swift/)
+[![](https://img.shields.io/badge/lang-Swift-fc3158)](https://developer.apple.com/jp/swift/)
 [![](https://img.shields.io/badge/licence-MIT-green.svg)](https://github.com/keisukeYamagishi/HttpRequest/blob/master/LICENSE)
+[![](https://img.shields.io/badge/twitter-brew__0-blue)](https://twitter.com/brew_0)
 
 ## Overview
 
@@ -117,31 +118,27 @@ class RootViewControler:TabPageScrollViewController {
 }
 
 @available(iOS 11.0, *)
-extension RootViewControler:TabPageDelegate{
-    
-    func willScrollPage(index: Int, viewController: UIViewController) {
-        
-        let vc:ViewController = viewController as! ViewController
-        
-        print ("index: \(index) viewController: \(vc.number)")
+extension RootViewControler: TabPageDelegate {
+
+    func categoryView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath, selected: Int) -> UICollectionViewCell {
+        let cell: CategoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+
+        cell.title.text = tabItems[indexPath.row].title
+        cell.tag = indexPath.row
+
+        if selected == indexPath.row {
+            cell.title.textColor = UIColor(red: 69 / 255, green: 134 / 255, blue: 255 / 255, alpha: 1.0)
+        } else {
+            cell.title.textColor = .lightGray
+        }
+        return cell
     }
-    
-    func didScrollPage(index: Int, viewController: UIViewController) {
-        
-        let vc:ViewController = viewController as! ViewController
-        
-        print ("index: \(index) viewController: \(vc.number)")
-    }
-    
-    
-    func tabChangeNotify(index: IndexPath, vc: UIViewController) {
-        print ("index: \(index)")
-    }
-    
-    func moveNavigationNotify(index: IndexPath) {
-        print ("index: \(index)")
+
+    func categoryView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
 }
+
 
 ```
 
