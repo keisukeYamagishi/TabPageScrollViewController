@@ -2,7 +2,6 @@
 
 [![](https://img.shields.io/badge/lang-Swift-fc3158)](https://developer.apple.com/jp/swift/)
 [![](https://img.shields.io/badge/licence-MIT-green.svg)](https://github.com/keisukeYamagishi/HttpRequest/blob/master/LICENSE)
-[![](https://img.shields.io/badge/twitter-brew__0-blue)](https://twitter.com/brew_0)
 
 ## Overview
 
